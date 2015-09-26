@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.hammerhead226.masterfrcscouter.android">
+    package="org.hammerhead226.masterfrcscouter.android" >
 
     <uses-sdk
         android:minSdkVersion="19"
@@ -66,13 +66,17 @@
         </activity>
         <activity
             android:name=".AutonMatchScoutActivity"
-            android:label="@string/title_activity_auton_match_scout" ></activity>
+            android:label="@string/title_activity_auton_match_scout" />
         <activity
             android:name=".CanBurgeledAutonActivity"
-            android:label="@string/title_activity_can_burgeled_auton"></activity>
+            android:label="@string/title_activity_can_burgeled_auton" />
         <activity
             android:name=".MatchScoutSubmitActivity"
-            android:label="@string/title_activity_match_scout_submit">
+            android:label="@string/title_activity_match_scout_submit" >
+        </activity>
+        <activity
+            android:name=".SideMenu"
+            android:label="@string/title_activity_side_menu" >
         </activity>
     </application>
 
