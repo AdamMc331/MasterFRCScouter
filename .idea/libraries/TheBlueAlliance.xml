@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="TheBlueAlliance">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/TheBlueAlliance.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
