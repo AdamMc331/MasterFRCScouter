@@ -47,6 +47,9 @@ public class MatchScoutActivity extends AppCompatActivity implements View.OnClic
         return true;
     }
 
+    @Override
+    public void onBackPressed() { startActivity(new Intent(this, MainActivity.class)); } //Go home
+
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.autonButton:

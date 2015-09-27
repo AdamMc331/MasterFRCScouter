@@ -8,8 +8,6 @@ import com.adithyasairam.Utils.EzIO.CSV.CSVWriter;
 import org.hammerhead226.masterfrcscouter.Utils.DataRW;
 import org.hammerhead226.masterfrcscouter.android.MainActivity;
 
-import io.realm.Realm;
-
 /**
  * Created by Adi on 8/30/2015.
  */
@@ -19,7 +17,6 @@ public class DataStorage {
 
     public static void addMatch(Context c) {
         appendAMatchToCSVFile();
-        appendAMatchToRealmDB();
         Match.fieldReset(); //FTA stuff
         Toast.makeText(c, "Match Saving Complete!", Toast.LENGTH_SHORT).show();
     }
@@ -95,12 +92,5 @@ public class DataStorage {
                 Integer.toString(Match.TotalAllianceScore),
                 Match.Comments
         };
-    }
-
-    public static void appendAMatchToRealmDB() {
-        Realm realm = Realm.getDefaultInstance();
-        realm.beginTransaction();
-        MatchData matchData = realm.createObject(MatchData.class);
-        realm.commitTransaction();
     }
 }
