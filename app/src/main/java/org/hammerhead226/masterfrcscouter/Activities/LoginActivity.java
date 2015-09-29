@@ -1,4 +1,4 @@
-package org.hammerhead226.masterfrcscouter.android;
+package org.hammerhead226.masterfrcscouter.Activities;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import com.adithyasairam.masterfrcscouter.Scouting.Scouter;
 import com.crashlytics.android.Crashlytics;
+
+import org.hammerhead226.masterfrcscouter.android.R;
 
 import io.fabric.sdk.android.Fabric;
 

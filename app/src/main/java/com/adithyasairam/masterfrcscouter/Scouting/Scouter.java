@@ -1,6 +1,6 @@
 package com.adithyasairam.masterfrcscouter.Scouting;
 
-import org.hammerhead226.masterfrcscouter.android.LoginActivity;
+import org.hammerhead226.masterfrcscouter.Activities.LoginActivity;
 
 import java.util.Calendar;
 

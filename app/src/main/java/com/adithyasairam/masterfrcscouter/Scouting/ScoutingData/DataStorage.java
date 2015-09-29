@@ -6,7 +6,7 @@ import android.widget.Toast;
 import com.adithyasairam.Utils.EzIO.CSV.CSVWriter;
 
 import org.hammerhead226.masterfrcscouter.Utils.DataRW;
-import org.hammerhead226.masterfrcscouter.android.MainActivity;
+import org.hammerhead226.masterfrcscouter.Activities.MainActivity;
 
 /**
  * Created by Adi on 8/30/2015.

@@ -1,10 +1,9 @@
-package org.hammerhead226.masterfrcscouter.android;
+package org.hammerhead226.masterfrcscouter.Activities;
 
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -15,8 +14,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
+import com.adithyasairam.Utils.SimpleLogger.*;
 import com.adithyasairam.masterfrcscouter.Scouting.Scouter;
 import com.crashlytics.android.Crashlytics;
 import com.digits.sdk.android.Digits;
@@ -24,6 +23,8 @@ import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterCore;
 
 import org.hammerhead226.masterfrcscouter.Utils.Constants;
+import org.hammerhead226.masterfrcscouter.Utils.MyApplication;
+import org.hammerhead226.masterfrcscouter.android.R;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;

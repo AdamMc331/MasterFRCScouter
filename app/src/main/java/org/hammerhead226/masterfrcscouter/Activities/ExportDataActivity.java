@@ -1,4 +1,4 @@
-package org.hammerhead226.masterfrcscouter.android;
+package org.hammerhead226.masterfrcscouter.Activities;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -13,6 +13,8 @@ import com.adithyasairam.masterfrcscouter.Scouting.Scouter;
 import com.google.common.io.Files;
 
 import org.hammerhead226.masterfrcscouter.Utils.Constants;
+import org.hammerhead226.masterfrcscouter.android.P;
+import org.hammerhead226.masterfrcscouter.android.R;
 
 import java.io.File;
 import java.util.Arrays;

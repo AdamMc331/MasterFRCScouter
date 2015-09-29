@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
-        android:name=".MyApplication"
+        android:name="org.hammerhead226.masterfrcscouter.Utils.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -24,7 +24,7 @@
             android:value="1ed35bd312c41111e97ba68eb810d5f712e60535" />
 
         <activity
-            android:name=".LoginActivity"
+            android:name="org.hammerhead226.masterfrcscouter.Activities.LoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,49 +33,49 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="org.hammerhead226.masterfrcscouter.Activities.MainActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".MatchScoutActivity"
+            android:name="org.hammerhead226.masterfrcscouter.Activities.MatchScoutActivity"
             android:label="@string/title_activity_match_scout" >
         </activity>
         <activity
-            android:name=".PitScoutActivity"
+            android:name="org.hammerhead226.masterfrcscouter.Activities.PitScoutActivity"
             android:label="@string/title_activity_pit_scout" >
         </activity>
         <activity
-            android:name=".InfoActivity"
+            android:name="org.hammerhead226.masterfrcscouter.Activities.InfoActivity"
             android:label="@string/title_activity_info" >
         </activity>
         <activity
-            android:name=".TheBlueAllianceActivity"
+            android:name="org.hammerhead226.masterfrcscouter.Activities.TheBlueAllianceActivity"
             android:label="@string/title_activity_the_blue_alliance" >
         </activity>
         <activity
-            android:name=".ExportDataActivity"
+            android:name="org.hammerhead226.masterfrcscouter.Activities.ExportDataActivity"
             android:label="@string/title_activity_export_data" >
         </activity>
         <activity
-            android:name=".SettingsActivity"
+            android:name="org.hammerhead226.masterfrcscouter.Activities.SettingsActivity"
             android:label="@string/title_activity_settings" >
         </activity>
         <activity
-            android:name=".TeleopMatchScoutActivity"
+            android:name="org.hammerhead226.masterfrcscouter.Activities.TeleopMatchScoutActivity"
             android:label="@string/title_activity_teleop_match_scout" >
         </activity>
         <activity
-            android:name=".AutonMatchScoutActivity"
+            android:name="org.hammerhead226.masterfrcscouter.Activities.AutonMatchScoutActivity"
             android:label="@string/title_activity_auton_match_scout" />
         <activity
-            android:name=".CanBurgeledAutonActivity"
+            android:name="org.hammerhead226.masterfrcscouter.Activities.CanBurgeledAutonActivity"
             android:label="@string/title_activity_can_burgeled_auton" />
         <activity
-            android:name=".MatchScoutSubmitActivity"
+            android:name="org.hammerhead226.masterfrcscouter.Activities.MatchScoutSubmitActivity"
             android:label="@string/title_activity_match_scout_submit" >
         </activity>
         <activity
-            android:name=".SideMenu"
+            android:name="org.hammerhead226.masterfrcscouter.Activities.UIElements.SideMenu"
             android:label="@string/title_activity_side_menu" >
         </activity>
     </application>

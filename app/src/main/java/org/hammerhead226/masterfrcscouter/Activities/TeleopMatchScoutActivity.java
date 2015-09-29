@@ -1,4 +1,4 @@
-package org.hammerhead226.masterfrcscouter.android;
+package org.hammerhead226.masterfrcscouter.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.adithyasairam.Utils.Annotations.Changeable;
 import com.adithyasairam.masterfrcscouter.Scouting.ScoutingData.DataParsing;
 import com.adithyasairam.masterfrcscouter.Scouting.ScoutingData.RRStack;
+
+import org.hammerhead226.masterfrcscouter.android.R;
 
 import java.util.ArrayList;
 
