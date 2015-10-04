@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,7 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.adithyasairam.Utils.SimpleLogger.*;
+import com.adithyasairam.Utils.SimpleLogger.Logger;
 import com.adithyasairam.masterfrcscouter.Scouting.Scouter;
 import com.crashlytics.android.Crashlytics;
 import com.digits.sdk.android.Digits;
@@ -31,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 
 import io.fabric.sdk.android.Fabric;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 
     public static Scouter instance;
@@ -39,9 +40,11 @@ public class MainActivity extends AppCompatActivity{
     protected MyApplication app;
 
     public static File csvFile;
+    public static Logger logger;
 
     Button matchScout, pitScout, info, TBABtn, exportData, logOut;
 
+    private Toolbar toolbar;
     private ListView mDrawerList;
     private DrawerLayout mDrawerLayout;
     private ArrayAdapter<String> mAdapter;
@@ -55,8 +58,11 @@ public class MainActivity extends AppCompatActivity{
         Fabric.with(this, new Crashlytics(), new TwitterCore(authConfig), new Digits());
         instance = new Scouter();
         app = (MyApplication) getApplication();
+        logger = app.initLogger();
         csvFile = new File(Constants.getMatchDataDir(), "Matches.csv");
         setContentView(R.layout.activity_main);
+        toolbar = (Toolbar)findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
         //pitScout.setOnClickListener(this);
         info = (Button) (findViewById(R.id.info));
         //info.setOnClickListener(this);
@@ -98,7 +104,9 @@ public class MainActivity extends AppCompatActivity{
                         break;
                     case 5:
                         instance.endSession();
+                        logger.Log(Logger.LogLevels.INFO, "Scouting session ended at: " + instance.sessionEndTime + ".", getClass());
                         Log.i(TAG, "Scouting session ended at: " + instance.sessionEndTime + ".");
+                        logger.Log(Logger.LogLevels.INFO, "Scouting session lasted: " + Math.abs(TimeUnit.MILLISECONDS.toMinutes(instance.getTotalTimeScouted())) + " minutes.", getClass());
                         Log.i(TAG, "Scouting session lasted: " + Math.abs(TimeUnit.MILLISECONDS.toMinutes(instance.getTotalTimeScouted())) + " minutes.");
                         startActivity(new Intent(MainActivity.this, LoginActivity.class));
                         break;

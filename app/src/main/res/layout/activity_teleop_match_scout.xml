@@ -40,7 +40,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/canonTopWithLitterText"
                 android:id="@+id/canOnTopWithLitterCB"
-                android:layout_gravity="left|center_vertical" />
+                android:layout_gravity="left|center_vertical"
+                />
 
             <CheckBox
                 android:layout_width="122dp"

@@ -33,9 +33,9 @@ public final class Constants {
         return matchDir;
     }
 
-    public static File getObjectDataDir() {
+    public static File getInternalDataDir() {
         File appDir = getAppDir();
-        File objectDir = new File(appDir.getAbsolutePath() + "/ObjectData");
+        File objectDir = new File(appDir.getAbsolutePath() + "/InternalData");
         objectDir.mkdirs();
         return objectDir;
     }

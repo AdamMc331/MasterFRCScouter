@@ -104,7 +104,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.bLogin:
                 try {
                     if ((rA.isChecked() && bA.isChecked())) {
-                        Toast.makeText(getApplicationContext(), "You have selected to scout both the Red and Blue Alliance!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "You have selected to scout both the Red and Blue Alliance", Toast.LENGTH_SHORT).show();
                         break;
                     }
                     scouterName = Name.getText().toString();
