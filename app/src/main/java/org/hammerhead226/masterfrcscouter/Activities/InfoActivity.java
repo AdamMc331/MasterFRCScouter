@@ -1,10 +1,12 @@
-package org.hammerhead226.masterfrcscouter.android;
+package org.hammerhead226.masterfrcscouter.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import org.hammerhead226.masterfrcscouter.android.R;
 
 public class InfoActivity extends AppCompatActivity {
 

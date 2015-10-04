@@ -1,13 +1,14 @@
 # MasterFRCScouter
 A new FRC Scouting Android App that allows for FRC Scouting.
-The original version (1.0) was built in the three days leading up to the 2015 Indiana Robotics Invitational (IRI)!
+The original version (1.0 Alpha) was built by one person (Adi) in the three days leading up to the 2015 Indiana Robotics Invitational (2015IRI)!
 
-Note: This app currently only supports scouting of the Recycle Rush IRI and Kettering Kickoff events. 
-Also, only Match Scouting is the only useable scouting menu.
+Note: In order to correctly build this app, you must make a Class called APIKeys, and add a "TWITTER_KEY" and "TWITTER_SECRET" Strings with Twitter API info (used for Fabric.io).
 
 ## TO-DO
-* Fix Realm.io exporting
-* Fix Bugs
+* Add Java Docs
+* Simplify the UI
+* Modularity
+* Cleanup
 * Unit Tests
 * Material UI
 * Launch the app to the Play Store

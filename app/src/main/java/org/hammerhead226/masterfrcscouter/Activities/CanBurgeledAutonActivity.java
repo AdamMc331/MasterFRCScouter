@@ -1,4 +1,4 @@
-package org.hammerhead226.masterfrcscouter.android;
+package org.hammerhead226.masterfrcscouter.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.adithyasairam.masterfrcscouter.Scouting.ScoutingData.DataParsing;
+
+import org.hammerhead226.masterfrcscouter.android.R;
 
 public class CanBurgeledAutonActivity extends AppCompatActivity implements View.OnClickListener {
 

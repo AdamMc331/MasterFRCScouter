@@ -1,4 +1,4 @@
-package org.hammerhead226.masterfrcscouter.android;
+package org.hammerhead226.masterfrcscouter.Activities;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -13,13 +13,12 @@ import com.adithyasairam.masterfrcscouter.Scouting.Scouter;
 import com.google.common.io.Files;
 
 import org.hammerhead226.masterfrcscouter.Utils.Constants;
+import org.hammerhead226.masterfrcscouter.android.P;
+import org.hammerhead226.masterfrcscouter.android.R;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-
-import io.realm.Realm;
 
 public class ExportDataActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -67,25 +66,10 @@ public class ExportDataActivity extends AppCompatActivity implements View.OnClic
     }
 
     public List<File> getFilesToSend() {
-        //addRealmFile();
         File files = Constants.getMatchDataDir();
         return Arrays.asList(files.listFiles());
     }
 
-    private void addRealmFile() {
-        Realm realm = Realm.getDefaultInstance();
-        File exportRealmFile = null;
-        try {
-            exportRealmFile = new File(Constants.getMatchDataDir(), "matches.realm");
-            exportRealmFile.delete();
-            realm.writeCopyTo(exportRealmFile);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        realm.close();
-    }
-
-    //FIXME: Test!!!
     public void sendEmail(List<File> filesToAttach) {
         try {
             String email = P.email.get();

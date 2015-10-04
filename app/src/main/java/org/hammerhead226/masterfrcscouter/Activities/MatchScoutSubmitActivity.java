@@ -1,4 +1,4 @@
-package org.hammerhead226.masterfrcscouter.android;
+package org.hammerhead226.masterfrcscouter.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import com.adithyasairam.masterfrcscouter.Scouting.ScoutingData.DataParsing;
 import com.adithyasairam.masterfrcscouter.Scouting.ScoutingData.DataStorage;
+
+import org.hammerhead226.masterfrcscouter.android.R;
 
 public class MatchScoutSubmitActivity extends AppCompatActivity implements View.OnClickListener {
     Button submit;

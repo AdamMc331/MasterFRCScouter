@@ -1,4 +1,4 @@
-package org.hammerhead226.masterfrcscouter.android;
+package org.hammerhead226.masterfrcscouter.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.webkit.WebView;
 
 import org.hammerhead226.masterfrcscouter.Utils.Constants;
+import org.hammerhead226.masterfrcscouter.android.R;
 
 //TODO: Change
 public class PitScoutActivity extends AppCompatActivity {

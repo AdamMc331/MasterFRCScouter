@@ -1,4 +1,4 @@
-package org.hammerhead226.masterfrcscouter.android;
+package org.hammerhead226.masterfrcscouter.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.adithyasairam.Utils.Annotations.Changeable;
 import com.adithyasairam.masterfrcscouter.Scouting.ScoutingData.DataParsing;
+
+import org.hammerhead226.masterfrcscouter.android.R;
 
 @Changeable(source = MatchScoutActivity.class,
         when = Changeable.When.YEARLY, priority = Changeable.Priority.HIGH)
@@ -46,6 +48,9 @@ public class MatchScoutActivity extends AppCompatActivity implements View.OnClic
         }
         return true;
     }
+
+    @Override
+    public void onBackPressed() { startActivity(new Intent(this, MainActivity.class)); } //Go home
 
     public void onClick(View v) {
         switch (v.getId()) {

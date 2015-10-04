@@ -1,9 +1,8 @@
-package org.hammerhead226.masterfrcscouter.android;
+package org.hammerhead226.masterfrcscouter.Utils;
 
 import android.support.multidex.MultiDexApplication;
 
-import io.realm.Realm;
-import io.realm.RealmConfiguration;
+import org.hammerhead226.masterfrcscouter.android.P;
 
 /**
  * Created by Adi on 9/6/2015.
@@ -14,11 +13,5 @@ public class MyApplication extends MultiDexApplication { //Extends MultiDexAppli
     public void onCreate() {
         super.onCreate();
         P.init(this);
-        setRealmConfig();
-    }
-
-    public void setRealmConfig() {
-        RealmConfiguration config = new RealmConfiguration.Builder(getApplicationContext()).name("matches.realm").build();
-        Realm.setDefaultConfiguration(config);
     }
 }

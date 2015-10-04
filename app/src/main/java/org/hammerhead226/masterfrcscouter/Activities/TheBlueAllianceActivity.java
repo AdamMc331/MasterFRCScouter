@@ -1,4 +1,4 @@
-package org.hammerhead226.masterfrcscouter.android;
+package org.hammerhead226.masterfrcscouter.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.view.MenuItem;
 
 import com.adithyasairam.Utils.Annotations.Changeable;
 import com.adithyasairam.masterfrcscouter.TBA.TBARequest;
+
+import org.hammerhead226.masterfrcscouter.android.R;
 
 //TODO: Not Started
 public class TheBlueAllianceActivity extends AppCompatActivity {
