@@ -52,8 +52,8 @@
         android:id="@+id/editText"
         android:gravity="center"
         android:hint="@string/scoutingPositionText"
-        android:layout_marginTop="45dp"
-        android:layout_below="@+id/rACheckbox"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/pitScoutCheckbox"
         android:layout_alignStart="@+id/rACheckbox"
         android:layout_alignEnd="@+id/infoTextview" />
 
@@ -62,8 +62,9 @@
         android:layout_height="wrap_content"
         android:text="Red Alliance"
         android:id="@+id/rACheckbox"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/infoTextview" />
+        android:layout_below="@+id/scouterName"
+        android:layout_alignStart="@+id/infoTextview"
+        android:layout_marginTop="44dp" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -72,5 +73,14 @@
         android:id="@+id/bACheckbox"
         android:layout_alignTop="@+id/rACheckbox"
         android:layout_toEndOf="@+id/rACheckbox" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pit Scout"
+        android:id="@+id/pitScoutCheckbox"
+        android:layout_below="@+id/rACheckbox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp" />
 
 </RelativeLayout>

@@ -35,7 +35,7 @@ public class MyApplication extends MultiDexApplication { //Extends MultiDexAppli
             public int MAX_LOG_SIZE() { return 10; }
 
             @Override
-            public int MIN_LOGGING_LEVEL() { return Logger.LogLevels.ERROR; }
+            public int MIN_LOGGING_LEVEL() { return Logger.LogLevels.DEBUG; }
 
             @Override
             public boolean APPEND_TO_FILE() { return true; }

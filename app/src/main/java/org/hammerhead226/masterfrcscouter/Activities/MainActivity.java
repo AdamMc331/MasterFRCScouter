@@ -2,6 +2,8 @@ package org.hammerhead226.masterfrcscouter.Activities;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -74,12 +76,13 @@ public class MainActivity extends AppCompatActivity {
         addDrawerItems();
         setupDrawer();
 
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#424242")));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
     }
 
     private void addDrawerItems() {
-        String[] osArray = { "Match Scout", "Pit Scout", "About", "The Blue Alliance","Log out"};
+        String[] osArray = { "Match Scout", "Pit Scout", "About", "The Blue Alliance", "Export Data", "Settings", "Log Out"};
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
         mDrawerList.setAdapter(mAdapter);
 
@@ -103,6 +106,9 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this, ExportDataActivity.class));
                         break;
                     case 5:
+                        startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+                        break;
+                    case 6:
                         instance.endSession();
                         logger.Log(Logger.LogLevels.INFO, "Scouting session ended at: " + instance.sessionEndTime + ".", getClass());
                         Log.i(TAG, "Scouting session ended at: " + instance.sessionEndTime + ".");

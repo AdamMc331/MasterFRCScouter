@@ -8,14 +8,10 @@
     <string name="emailText">Email</string>
     <string name="eventToScoutText">Event to Scout</string>
     <string-array name="event_list_titles">
-        <item>Athens (Debug)</item>
-        <item>IRI 2105</item>
-        <item>Kettering</item>
+        <item>All Girls Event</item>
     </string-array>
     <string-array name="event_list_values">
-        <item>2015mitry</item>
-        <item>2015iri</item>
-        <item>null</item>
+        <item>2015miag</item>
     </string-array>
 
     <!-- Example settings for Data & Sync -->

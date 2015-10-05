@@ -11,7 +11,7 @@ import java.io.File;
 public final class Constants {
     public static final String TWITTER_KEY = APIKeys.TWITTER_KEY; //Twitter API Key
     public static final String TWITTER_SECRET = APIKeys.TWITTER_SECRET; //Twitter API Secret
-    public static String GoogleFormsURL = ""; //Put Google Forms URL here for Pit scouting
+    public static String GoogleFormsURL = "http://www.google.com"; //Put Google Forms URL here for Pit scouting
 
     public static File getAppDir() {
         File appDir = new File(Environment.getExternalStorageDirectory() + "/MasterFRCScouter");

@@ -5,8 +5,8 @@ import android.widget.Toast;
 
 import com.adithyasairam.Utils.EzIO.CSV.CSVWriter;
 
-import org.hammerhead226.masterfrcscouter.Utils.DataRW;
 import org.hammerhead226.masterfrcscouter.Activities.MainActivity;
+import org.hammerhead226.masterfrcscouter.Utils.DataRW;
 
 /**
  * Created by Adi on 8/30/2015.
@@ -33,37 +33,38 @@ public class DataStorage {
 
     private static String[] getHeaders() {
         return new String[]{
-                "MatchNumber",
-                "ScouterName",
-                "TeamNumber",
-                "ScoutingPosition",
-                "RandomID",
-                "AutonMode",
-                "NumberOfAcquiredBinsInAuton",
-                "NumberOfAutonFoulPoints",
-                "NumAutonCansAttemptedToBurgle",
-                "NumAutonCansBurgled",
-                "CanBurglingSpeed",
-                "WasACOOPSetScoredInTeleop",
-                "WasACOOPStackScoredInTeleop",
-                "AreStacksDown",
-                "RobotWasPoorlyDriven",
-                "RobotDidCap",
-                "NumberOfCaps",
-                "NumberOfStacksScoredInTeleop",
-                "ToteSource",
-                "NumberOfTeleopFoulPoints",
-                "ThisRobotsAproxAutonScore",
-                "ThisRobotsAproxTeleopScore",
-                "ThisRobotsAproxCOOPScore",
-                "ThisRobotsAproxTotalScore",
-                "TotalAllianceScore",
+                "Match Number",
+                "Scouter Name",
+                "Team Number",
+                "Scouting Position",
+                "Random ID",
+                "Auton Mode",
+                "Number of Acquired Bins in Auton",
+                "Number of Auton Foul Points",
+                "Num Auton Cans Attempted to Burgle",
+                "Num Auton Cans Burgled",
+                "Can Burgling Speed",
+                "Was a COOP Set Scored in Teleop",
+                "Was a COOP Stack Scored in Teleop",
+                "Are Stacks Down",
+                "Robot Was Poorly Driven",
+                "Robot Did Cap",
+                "Number of Caps",
+                "Number of Stacks Scored in Teleop",
+                "Tote Source",
+                "Number of Teleop Foul Points",
+                "This Robots Aprox Auton Score",
+                "This Robots Aprox Teleop Score",
+                "This Robots Aprox COOP Score",
+                "This Robots Aprox Total Score",
+                "Total Alliance Score",
                 "Comments"
         };
     }
 
     private static String[] getData() {
         Match match = new Match();
+        if (Match.Comments == null || Match.Comments.length() == 0) { Match.Comments = "None";}
         return new String[]{
                 Integer.toString(Match.MatchNumber),
                 Match.ScouterName,

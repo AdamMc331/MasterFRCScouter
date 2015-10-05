@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     EditText Name, Position;
     Button bLogin;
-    CheckBox rA, bA;
+    CheckBox rA, bA, pS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         rA.setOnClickListener(this);
         bA = (CheckBox) findViewById(R.id.bACheckbox);
         bA.setOnClickListener(this);
+        pS = (CheckBox) findViewById(R.id.pitScoutCheckbox);
+        pS.setOnClickListener(this);
         bLogin = (Button)(findViewById(R.id.bLogin));
         bLogin.setOnClickListener(this);
     }
@@ -100,6 +102,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 isRedScouter = false;
                 bA.setActivated(true);
                 rA.setActivated(false);
+                break;
+            case R.id.pitScoutCheckbox:
+                startActivity(new Intent(this, PitScoutActivity.class)); //Go to Pit Scout actvity, and stay there!!
+                finish();
                 break;
             case R.id.bLogin:
                 try {
