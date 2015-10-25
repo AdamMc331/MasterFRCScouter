@@ -11,7 +11,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.adithyasairam.Utils.Annotations.Changeable;
-import com.adithyasairam.masterfrcscouter.Scouting.ScoutingData.DataParsing;
+import com.adithyasairam.masterfrcscouter.Backend.Intents;
+import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
+import com.adithyasairam.masterfrcscouter.Backend.Scouting.Match;
+import com.adithyasairam.masterfrcscouter.Backend.Scouting.RecycleRush.RecycleRush;
 
 import org.hammerhead226.masterfrcscouter.android.R;
 
@@ -21,6 +24,7 @@ public class MatchScoutActivity extends AppCompatActivity implements View.OnClic
 
     Button autonButton, goHomeButton;
     EditText teamNumberET, matchNumberET;
+    Match match = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +62,7 @@ public class MatchScoutActivity extends AppCompatActivity implements View.OnClic
                 //ensures that the form fields are filled out or else the app crashes
                 if((!teamNumberET.getText().toString().equals(""))&& (!matchNumberET.getText().toString().equals(""))){
                     parseData();
-                    startActivity(new Intent(this, AutonMatchScoutActivity.class));
+                    startActivity(new Intents.IntentBuilder().toClass(AutonMatchScoutActivity.class).withContext(this).withData(Constants.MATCH_KEY, match).build());
                     break;
                 }else{
                     Toast.makeText(getApplicationContext(),"Please make sure both fields are filled out",Toast.LENGTH_SHORT).show();
@@ -70,6 +74,6 @@ public class MatchScoutActivity extends AppCompatActivity implements View.OnClic
     private void parseData() {
         int teamNum = Integer.parseInt(teamNumberET.getText().toString());
         int matchNum = Integer.parseInt(matchNumberET.getText().toString());
-        DataParsing.setBasicInfo(teamNum, matchNum);
+        match = new RecycleRush(matchNum, teamNum);
     }
 }

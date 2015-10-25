@@ -1,4 +1,4 @@
-package com.adithyasairam.masterfrcscouter.Scouting;
+package com.adithyasairam.masterfrcscouter.Backend.Scouting;
 
 import org.hammerhead226.masterfrcscouter.Activities.LoginActivity;
 

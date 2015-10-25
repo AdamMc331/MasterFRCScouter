@@ -1,13 +1,13 @@
-package com.adithyasairam.masterfrcscouter.Scouting.ScoutingData;
+package com.adithyasairam.masterfrcscouter.Backend.Scouting.RecycleRush;
 
-import com.adithyasairam.Utils.Annotations.Changeable;
+import java.io.Serializable;
 
 /**
  * Created by Adi on 7/14/2015.
  */
-@Changeable(source = com.adithyasairam.masterfrcscouter.Scouting.ScoutingData.RRStack.class,
-        when = Changeable.When.YEARLY, priority = Changeable.Priority.HIGH)
-public class RRStack implements Comparable<RRStack>{
+public class RRStack implements Comparable<RRStack>, Serializable {
+    private static final long serialVersionUID = 201510242305L; /* Date Stamp: 2015-10-24 - 23:05 */
+
     public int height;
     public boolean canOnTop;
     public boolean canOnTopWithLitter;

@@ -14,7 +14,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.adithyasairam.Utils.Annotations.Changeable;
-import com.adithyasairam.masterfrcscouter.Scouting.ScoutingData.DataParsing;
+import com.adithyasairam.masterfrcscouter.Backend.Intents;
+import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
+import com.adithyasairam.masterfrcscouter.Backend.Scouting.RecycleRush.RecycleRush;
 
 import org.hammerhead226.masterfrcscouter.android.R;
 
@@ -33,9 +35,13 @@ public class AutonMatchScoutActivity extends AppCompatActivity implements View.O
     String autonSelection = "";
     CharSequence origText = null;
 
+    RecycleRush match;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        try { match = Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, getIntent()); }
+        catch(Exception e) { e.printStackTrace(); }
         setContentView(R.layout.activity_auton_match_scout);
         autonListView = (ListView) findViewById(R.id.autonItems);
         final List<String> values = Arrays.asList("Drove to Auto Zone",
@@ -73,8 +79,7 @@ public class AutonMatchScoutActivity extends AppCompatActivity implements View.O
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.goToTeleop:
-                parseData();
-                startActivity(new Intent(this, TeleopMatchScoutActivity.class));
+                startActivity(new Intents.IntentBuilder().toClass(TeleopMatchScoutActivity.class).withContext(this).withData(Constants.MATCH_KEY, match).build());
                 break;
         }
     }
@@ -91,12 +96,13 @@ public class AutonMatchScoutActivity extends AppCompatActivity implements View.O
         }
         if (autonSelection.equals("Can Burgled")) {
             setBlank();
-            Intent intent = new Intent(this, CanBurgeledAutonActivity.class);
+            Intent intent = new Intents.IntentBuilder().toClass(CanBurgeledAutonActivity.class).withContext(this).withData(Constants.MATCH_KEY, match).build();
             startActivityForResult(intent, RESULT_OK);
         }
         if (autonSelection.equals("Did Nothing")) {
             setBlank();
         }
+        parseData();
     }
 
     @Override
@@ -104,11 +110,19 @@ public class AutonMatchScoutActivity extends AppCompatActivity implements View.O
         super.onResume();
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            try { match = Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, data); }
+            catch(Exception e) { e.printStackTrace(); }
+        }
+    }
+
     private void parseData() {
         try {
             int aB = Integer.parseInt(acquiredStepBins.getText().toString());
             int aF = Integer.parseInt(autoFouls.getText().toString());
-            DataParsing.setAutonInfo(autonSelection, aB, aF);
+            match.putAutonInfo(autonSelection, aB, aF);
         }
         catch (Exception e) { }
     }

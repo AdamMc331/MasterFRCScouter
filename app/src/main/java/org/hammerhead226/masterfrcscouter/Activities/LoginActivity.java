@@ -13,7 +13,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.adithyasairam.masterfrcscouter.Scouting.Scouter;
+import com.adithyasairam.masterfrcscouter.Backend.Scouting.Scouter;
 import com.crashlytics.android.Crashlytics;
 
 import org.hammerhead226.masterfrcscouter.android.R;

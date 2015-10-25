@@ -9,10 +9,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.adithyasairam.masterfrcscouter.Scouting.Scouter;
+import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
+import com.adithyasairam.masterfrcscouter.Backend.Scouting.Scouter;
 import com.google.common.io.Files;
 
-import org.hammerhead226.masterfrcscouter.Utils.Constants;
 import org.hammerhead226.masterfrcscouter.android.P;
 import org.hammerhead226.masterfrcscouter.android.R;
 

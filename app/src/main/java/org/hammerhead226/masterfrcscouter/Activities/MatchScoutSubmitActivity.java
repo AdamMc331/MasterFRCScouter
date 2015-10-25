@@ -11,8 +11,10 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.adithyasairam.masterfrcscouter.Scouting.ScoutingData.DataParsing;
-import com.adithyasairam.masterfrcscouter.Scouting.ScoutingData.DataStorage;
+import com.adithyasairam.masterfrcscouter.Backend.DataStorage;
+import com.adithyasairam.masterfrcscouter.Backend.Intents;
+import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
+import com.adithyasairam.masterfrcscouter.Backend.Scouting.RecycleRush.RecycleRush;
 
 import org.hammerhead226.masterfrcscouter.android.R;
 
@@ -21,10 +23,13 @@ public class MatchScoutSubmitActivity extends AppCompatActivity implements View.
     Switch poorlyDrivenRobot;
     EditText allianceScore;
     TextView comments;
+    RecycleRush match;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        try { match = Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, getIntent()); }
+        catch(Exception e) { e.printStackTrace(); }
         setContentView(R.layout.activity_match_scout_submit);
         submit = (Button) (findViewById(R.id.nextBttn));
         submit.setOnClickListener(this);
@@ -56,7 +61,7 @@ public class MatchScoutSubmitActivity extends AppCompatActivity implements View.
             case R.id.nextBttn:
                 try {
                     parseData();
-                    DataStorage.addMatch(getApplicationContext());
+                    DataStorage.addMatch(match, getApplicationContext());
                     startActivity(new Intent(this, MatchScoutActivity.class));
                     finish();
                     break;
@@ -71,8 +76,10 @@ public class MatchScoutSubmitActivity extends AppCompatActivity implements View.
             String commentsText = comments.getText().toString();
             int aScore = Integer.parseInt(allianceScore.getText().toString());
             boolean badDriving = poorlyDrivenRobot.isChecked();
-            DataParsing.setExtraInfo(commentsText, aScore, badDriving);
+            match.putExtras(commentsText, badDriving);
+            match.putScores(aScore);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

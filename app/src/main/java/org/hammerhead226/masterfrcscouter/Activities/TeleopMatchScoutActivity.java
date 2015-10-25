@@ -13,8 +13,10 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import com.adithyasairam.Utils.Annotations.Changeable;
-import com.adithyasairam.masterfrcscouter.Scouting.ScoutingData.DataParsing;
-import com.adithyasairam.masterfrcscouter.Scouting.ScoutingData.RRStack;
+import com.adithyasairam.masterfrcscouter.Backend.Intents;
+import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
+import com.adithyasairam.masterfrcscouter.Backend.Scouting.RecycleRush.RRStack;
+import com.adithyasairam.masterfrcscouter.Backend.Scouting.RecycleRush.RecycleRush;
 
 import org.hammerhead226.masterfrcscouter.android.R;
 
@@ -28,11 +30,14 @@ public class TeleopMatchScoutActivity extends AppCompatActivity implements View.
     EditText numTeleFouls, stackHeight, numCansCapped;
     Switch coopSet, coopStack, knockedOverStacks, didCapCans;
     CheckBox canOnTopWithLitter, canOnTop, totesFromHF, totesFromLF;
+    RecycleRush match;
     public static ArrayList<RRStack> rrStackArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        try { match = Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, getIntent()); }
+        catch(Exception e) { e.printStackTrace(); }
         rrStackArrayList = new ArrayList<RRStack>(5);
         setContentView(R.layout.activity_teleop_match_scout);
         numTeleFouls = (EditText)(findViewById(R.id.numTeleFoulsET));
@@ -91,7 +96,7 @@ public class TeleopMatchScoutActivity extends AppCompatActivity implements View.
             case R.id.nextBttn:
                 try {
                     parseData();
-                    startActivity(new Intent(this, MatchScoutSubmitActivity.class));
+                    startActivity(new Intents.IntentBuilder().toClass(MatchScoutSubmitActivity.class).withContext(this).withData(Constants.MATCH_KEY, match).build());
                     break;
                 }
                 catch (Exception e) { e.printStackTrace(); }
@@ -107,7 +112,7 @@ public class TeleopMatchScoutActivity extends AppCompatActivity implements View.
             boolean stackDown = knockedOverStacks.isChecked();
             boolean didCap = didCapCans.isChecked();
             String toteSource = getToteSource();
-            DataParsing.setTeleopInfo(nTF, nCC, cSet, cStack, stackDown, didCap, toteSource, rrStackArrayList);
+            match.putTeleopInfo(cSet, cStack, stackDown, didCap, nCC, toteSource, nTF, rrStackArrayList);
         }
         catch (Exception e) { }
     }

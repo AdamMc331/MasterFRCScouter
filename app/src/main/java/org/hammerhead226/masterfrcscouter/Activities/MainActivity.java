@@ -19,14 +19,14 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.adithyasairam.Utils.SimpleLogger.Logger;
-import com.adithyasairam.masterfrcscouter.Scouting.Scouter;
+import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
+import com.adithyasairam.masterfrcscouter.Backend.Scouting.Scouter;
 import com.crashlytics.android.Crashlytics;
 import com.digits.sdk.android.Digits;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterCore;
 
-import org.hammerhead226.masterfrcscouter.Utils.Constants;
-import org.hammerhead226.masterfrcscouter.Utils.MyApplication;
+import org.hammerhead226.masterfrcscouter.Misc.MyApplication;
 import org.hammerhead226.masterfrcscouter.android.R;
 
 import java.io.File;

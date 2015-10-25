@@ -1,8 +1,9 @@
-package org.hammerhead226.masterfrcscouter.Utils;
+package org.hammerhead226.masterfrcscouter.Misc;
 
 import android.support.multidex.MultiDexApplication;
 
 import com.adithyasairam.Utils.SimpleLogger.Logger;
+import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
 
 import org.hammerhead226.masterfrcscouter.android.P;
 

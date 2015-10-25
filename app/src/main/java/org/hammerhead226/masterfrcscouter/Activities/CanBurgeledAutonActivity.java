@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.adithyasairam.masterfrcscouter.Scouting.ScoutingData.DataParsing;
+import com.adithyasairam.masterfrcscouter.Backend.Intents;
+import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
+import com.adithyasairam.masterfrcscouter.Backend.Scouting.RecycleRush.RecycleRush;
 
 import org.hammerhead226.masterfrcscouter.android.R;
 
@@ -18,15 +20,19 @@ public class CanBurgeledAutonActivity extends AppCompatActivity implements View.
     EditText NumAtt, NumGrabbed, Speed;
     Button done;
 
+    RecycleRush match;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        try { match = Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, getIntent()); }
+        catch(Exception e) { e.printStackTrace(); }
         setContentView(R.layout.activity_can_burgeled_auton);
         NumAtt = (EditText) (findViewById(R.id.numCansAttempted));
         NumGrabbed = (EditText) (findViewById(R.id.numCansGrabbed));
         Speed = (EditText) (findViewById(R.id.canBurglingSpeed));
         done = (Button) (findViewById(R.id.donePlsButton));
-        done.setOnClickListener(this); //WTF that's all I missed
+        done.setOnClickListener(this);
     }
 
     @Override
@@ -51,7 +57,9 @@ public class CanBurgeledAutonActivity extends AppCompatActivity implements View.
         switch (view.getId()) {
             case R.id.donePlsButton:
                 parseData();
-                this.setResult(RESULT_OK);
+                Intent data = new Intent();
+                data.putExtra(Constants.MATCH_KEY, match);
+                setResult(RESULT_OK, data);
                 finish();
                 break;
         }
@@ -62,7 +70,7 @@ public class CanBurgeledAutonActivity extends AppCompatActivity implements View.
             int numAttempted = Integer.parseInt(NumAtt.getText().toString());
             int numGrabbed = Integer.parseInt(NumGrabbed.getText().toString());
             double speed = Double.parseDouble(Speed.getText().toString());
-            DataParsing.setCanBurglingAutonInfo(numAttempted, numGrabbed, speed);
+            match.putCanAutonInfo(numAttempted, numGrabbed, speed);
         } catch (Exception e) {
             e.printStackTrace();
         }
