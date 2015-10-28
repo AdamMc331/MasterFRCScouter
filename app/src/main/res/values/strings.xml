@@ -50,7 +50,7 @@
     <string name="canOnTopText">Can On Top?</string>
     <string name="numHumanLitterThrownText">Num Litter Thrown</string>
     <string name="numLitterPushedText">Num Litter Pushed</string>
-    <string name="numTeleFoulsText">Tele Fouls</string>
+    <string name="numTeleFoulsText">Teleop Fouls</string>
     <string name="coopSetText">CO-OP Set</string>
     <string name="coopStackText">CO-OP Stack</string>
     <string name="commentsText">Comments: </string>
@@ -66,8 +66,8 @@
     <string name="title_activity_match_scout_submit">Match Submit</string>
     <string name="nextText">Next</string>
     <string name="canSpeedInstructionsText">A decimal number from 0 to 1:</string>
-    <string name="totesFromHumanFeederText">Totes from Human Feeder</string>
-    <string name="totesFromLandfillText">Totes from Landfill</string>
+    <string name="totesFromHumanFeederText">Human Feeder Totes</string>
+    <string name="totesFromLandfillText">Landfill Totes</string>
     <string name="autonSelectionText">Auton Selection:</string>
     <string name="goHome">Go Home</string>
     <string name="title_activity_side_menu">SideMenu</string>

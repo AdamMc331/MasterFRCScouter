@@ -1,23 +1,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:weightSum = "3"
+    android:layout_height="match_parent"
+
     tools:context="org.hammerhead226.masterfrcscouter.Activities.TeleopMatchScoutActivity">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/nextBttn"
-        android:id="@+id/mainFrameLayout">
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="148dp"
+            android:layout_height="130dp"
             android:layout_gravity="right|top"
             android:id="@+id/stackSubmitFrame"
-            android:background="@drawable/layout_border">
+            android:background="@drawable/layout_border"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true">
 
             <Button
                 android:layout_width="wrap_content"
@@ -44,7 +41,8 @@
                 />
 
             <CheckBox
-                android:layout_width="122dp"
+                android:padding = "10dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/canOnTopText"
                 android:id="@+id/canOnTopCB"
@@ -52,21 +50,27 @@
         </FrameLayout>
 
         <FrameLayout
+            android:padding = "10dp"
             android:layout_width="match_parent"
-            android:layout_height="90dp"
+            android:layout_height="130dp"
             android:layout_gravity="center"
             android:id="@+id/toteStackFrameLayout"
-            android:background="@drawable/layout_border">
+            android:background="@drawable/layout_border"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/stackSubmitFrame"
+            android:layout_marginTop="35dp">
 
             <CheckBox
-                android:layout_width="177dp"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/totesFromHumanFeederText"
                 android:id="@+id/totesFromHumanFeeder"
                 android:layout_gravity="left|top" />
 
             <CheckBox
-                android:layout_width="122dp"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/totesFromLandfillText"
                 android:id="@+id/totesFromLandfill"
@@ -80,64 +84,70 @@
                 android:layout_gravity="left|bottom" />
 
             <EditText
-                android:layout_width="137dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/numCansCappedET"
+                android:gravity="center"
                 android:layout_gravity="right|bottom"
                 android:hint="@string/numCansCappedText" />
         </FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
             android:layout_gravity="center_horizontal|bottom"
             android:background="@drawable/layout_border"
-            android:id="@+id/miscFrameLayout">
+            android:id="@+id/miscFrameLayout"
+            android:layout_above="@+id/nextBttn"
+            android:layout_alignStart="@+id/stackSubmitFrame"
+            android:layout_marginBottom="35dp">
 
             <Switch
-                android:layout_width="150dp"
-                android:layout_height="56dp"
+                android:padding="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/coopSetText"
                 android:id="@+id/coopSetSwitch"
                 android:layout_gravity="left|top" />
 
             <Switch
-                android:layout_width="150dp"
-                android:layout_height="56dp"
+                android:padding="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/coopStackText"
                 android:id="@+id/coopStackSwitch"
                 android:layout_gravity="right|top" />
 
             <Switch
-                android:layout_width="210dp"
-                android:layout_height="70dp"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/knockedOverStacksText"
                 android:id="@+id/knockedStackSwitch"
                 android:layout_gravity="left|bottom"
-                android:singleLine="false"
-                android:lines="3" />
+                android:singleLine="false" />
 
             <EditText
-                android:layout_width="105dp"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:ems="10"
                 android:id="@+id/numTeleFoulsET"
                 android:layout_gravity="right|bottom"
                 android:hint="@string/numTeleFoulsText" />
 
         </FrameLayout>
 
-    </FrameLayout>
 
     <Button
+        android:padding = "10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/nextText"
         android:id="@+id/nextBttn"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
