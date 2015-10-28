@@ -11,7 +11,7 @@ import com.adithyasairam.masterfrcscouter.TBA.TBARequest;
 
 import org.hammerhead226.masterfrcscouter.android.R;
 
-//TODO: Not Started
+//TODO: Work on
 public class TheBlueAllianceActivity extends AppCompatActivity {
 
     @Override

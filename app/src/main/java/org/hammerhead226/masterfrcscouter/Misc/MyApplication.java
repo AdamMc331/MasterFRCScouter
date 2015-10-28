@@ -41,7 +41,7 @@ public class MyApplication extends MultiDexApplication { //Extends MultiDexAppli
             @Override
             public boolean APPEND_TO_FILE() { return true; }
         };
-        logger = new Logger.LoggerFactory().config(config).buildLogger();
+        logger = new Logger.LoggerFactory().config(config).build();
         return logger;
     }
 }

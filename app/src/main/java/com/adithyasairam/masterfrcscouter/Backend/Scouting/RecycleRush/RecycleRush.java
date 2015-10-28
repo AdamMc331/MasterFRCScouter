@@ -1,5 +1,8 @@
 package com.adithyasairam.masterfrcscouter.Backend.Scouting.RecycleRush;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.adithyasairam.Utils.Annotations.Exclude;
 import com.adithyasairam.masterfrcscouter.Backend.Scouting.Match;
 
@@ -42,8 +45,12 @@ public class RecycleRush extends Match {
     public boolean robotWasPoorlyDriven;
     public String comments;
 
+    //TODO: Finish adding items to Unparcel
     public RecycleRush(int mN, int tN) {
         super(mN, tN);
+    }
+    protected RecycleRush(Parcel in) {
+        super(in);
     }
 
     public void putAutonInfo(String mode, int numAcquiredBins, int numFouls) {
@@ -82,16 +89,6 @@ public class RecycleRush extends Match {
     public void putExtras(String notes, boolean badDriving) {
         comments = notes;
         robotWasPoorlyDriven = badDriving;
-    }
-
-    @Override
-    public int compareTo(Match o) {
-        RecycleRush other = (RecycleRush)o;
-        if (thisRobotsAproxTotalScore > other.thisRobotsAproxTotalScore) {
-            return 1;
-        } else if (thisRobotsAproxTotalScore < other.thisRobotsAproxTotalScore) {
-            return -1;
-        } else return 0;
     }
 
     @Override
@@ -277,4 +274,30 @@ public class RecycleRush extends Match {
                 calculateThisRobotsAproxTeleopScore() +
                 calculateThisRobotsAproxCOOPScore();
     }
+
+    @Override
+    public int compareTo(Match o) {
+        RecycleRush other = (RecycleRush)o;
+        if (thisRobotsAproxTotalScore > other.thisRobotsAproxTotalScore) {
+            return 1;
+        } else if (thisRobotsAproxTotalScore < other.thisRobotsAproxTotalScore) {
+            return -1;
+        } else return 0;
+    }
+
+    //TODO: Finish adding items to Parcel
+    @Override public void writeToParcel(Parcel out, int flags) {
+        super.writeToParcel(out, flags);
+    }
+
+    public static final Parcelable.Creator<RecycleRush> CREATOR
+            = new Parcelable.Creator<RecycleRush>() {
+        public RecycleRush createFromParcel(Parcel in) {
+            return new RecycleRush(in);
+        }
+
+        public RecycleRush[] newArray(int size) {
+            return new RecycleRush[size];
+        }
+    };
 }

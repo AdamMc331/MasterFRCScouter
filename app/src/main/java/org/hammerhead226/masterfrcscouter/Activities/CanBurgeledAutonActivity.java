@@ -9,12 +9,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.adithyasairam.Utils.Annotations.Changeable;
 import com.adithyasairam.masterfrcscouter.Backend.Intents;
 import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
 import com.adithyasairam.masterfrcscouter.Backend.Scouting.RecycleRush.RecycleRush;
 
 import org.hammerhead226.masterfrcscouter.android.R;
 
+@Changeable(source = AutonMatchScoutActivity.class,
+        when = Changeable.When.YEARLY, priority = Changeable.Priority.HIGH, changeType = Changeable.ChangeType.REMOVE)
 public class CanBurgeledAutonActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText NumAtt, NumGrabbed, Speed;
@@ -57,8 +60,7 @@ public class CanBurgeledAutonActivity extends AppCompatActivity implements View.
         switch (view.getId()) {
             case R.id.donePlsButton:
                 parseData();
-                Intent data = new Intent();
-                data.putExtra(Constants.MATCH_KEY, match);
+                Intent data = new Intents.IntentBuilder().withSerializable(Constants.MATCH_KEY, match).build();
                 setResult(RESULT_OK, data);
                 finish();
                 break;

@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.adithyasairam.Utils.Annotations.Changeable;
 import com.adithyasairam.masterfrcscouter.Backend.DataStorage;
 import com.adithyasairam.masterfrcscouter.Backend.Intents;
 import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
@@ -18,6 +19,8 @@ import com.adithyasairam.masterfrcscouter.Backend.Scouting.RecycleRush.RecycleRu
 
 import org.hammerhead226.masterfrcscouter.android.R;
 
+@Changeable(source = AutonMatchScoutActivity.class,
+        when = Changeable.When.YEARLY, priority = Changeable.Priority.HIGH)
 public class MatchScoutSubmitActivity extends AppCompatActivity implements View.OnClickListener {
     Button submit;
     Switch poorlyDrivenRobot;

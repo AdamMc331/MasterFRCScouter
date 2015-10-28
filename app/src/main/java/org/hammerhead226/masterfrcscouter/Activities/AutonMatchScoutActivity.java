@@ -79,12 +79,11 @@ public class AutonMatchScoutActivity extends AppCompatActivity implements View.O
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.goToTeleop:
-                startActivity(new Intents.IntentBuilder().toClass(TeleopMatchScoutActivity.class).withContext(this).withData(Constants.MATCH_KEY, match).build());
+                startActivity(new Intents.IntentBuilder().toClass(TeleopMatchScoutActivity.class).withContext(this).withSerializable(Constants.MATCH_KEY, match).build());
                 break;
         }
     }
 
-    //FIXME TEST
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
         String[] values = new String[]{"Drove to Auto Zone",
@@ -96,7 +95,7 @@ public class AutonMatchScoutActivity extends AppCompatActivity implements View.O
         }
         if (autonSelection.equals("Can Burgled")) {
             setBlank();
-            Intent intent = new Intents.IntentBuilder().toClass(CanBurgeledAutonActivity.class).withContext(this).withData(Constants.MATCH_KEY, match).build();
+            Intent intent = new Intents.IntentBuilder().toClass(CanBurgeledAutonActivity.class).withContext(this).withSerializable(Constants.MATCH_KEY, match).build();
             startActivityForResult(intent, RESULT_OK);
         }
         if (autonSelection.equals("Did Nothing")) {

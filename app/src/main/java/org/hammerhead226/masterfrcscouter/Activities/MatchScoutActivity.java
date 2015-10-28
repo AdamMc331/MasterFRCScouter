@@ -62,7 +62,7 @@ public class MatchScoutActivity extends AppCompatActivity implements View.OnClic
                 //ensures that the form fields are filled out or else the app crashes
                 if((!teamNumberET.getText().toString().equals(""))&& (!matchNumberET.getText().toString().equals(""))){
                     parseData();
-                    startActivity(new Intents.IntentBuilder().toClass(AutonMatchScoutActivity.class).withContext(this).withData(Constants.MATCH_KEY, match).build());
+                    startActivity(new Intents.IntentBuilder().toClass(AutonMatchScoutActivity.class).withContext(this).withSerializable(Constants.MATCH_KEY, match).build());
                     break;
                 }else{
                     Toast.makeText(getApplicationContext(),"Please make sure both fields are filled out",Toast.LENGTH_SHORT).show();

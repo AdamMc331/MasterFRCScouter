@@ -11,7 +11,7 @@ import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
 
 import org.hammerhead226.masterfrcscouter.android.R;
 
-//TODO: Change
+//TODO: Refactor
 public class PitScoutActivity extends AppCompatActivity {
     WebView myWebView;
 

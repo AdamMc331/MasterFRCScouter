@@ -96,7 +96,7 @@ public class TeleopMatchScoutActivity extends AppCompatActivity implements View.
             case R.id.nextBttn:
                 try {
                     parseData();
-                    startActivity(new Intents.IntentBuilder().toClass(MatchScoutSubmitActivity.class).withContext(this).withData(Constants.MATCH_KEY, match).build());
+                    startActivity(new Intents.IntentBuilder().toClass(MatchScoutSubmitActivity.class).withContext(this).withSerializable(Constants.MATCH_KEY, match).build());
                     break;
                 }
                 catch (Exception e) { e.printStackTrace(); }
