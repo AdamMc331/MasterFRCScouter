@@ -71,7 +71,8 @@ public class Intents {
             return intent;
         }
 
-        public static Intent buildBlankIntent(Context context, Class<?> destination) { return new Intent(context, destination); }
+        public static Intent buildDefaultIntent(Context context, Class<?> destination) { return new Intent(context, destination); 
+        public static Intent buildBlankIntent() { return new Intent(); }
     }
 
     public static class IntentProperties {
@@ -104,7 +105,7 @@ public class Intents {
         public static <T> T getParcelable(String name, Intent intent) throws ItemNotFoundException {
             Parcelable parcelable = intent.getParcelableExtra(name);
             if (parcelable == null) {
-                throw new ItemNotFoundException("Parceable " + name + " not found in " + intent.toString() + ".");
+                throw new ItemNotFoundException("Parcelable " + name + " not found in " + intent.toString() + ".");
             }
             return (T) parcelable;
         }
