@@ -71,7 +71,7 @@ public class Intents {
             return intent;
         }
 
-        public static Intent buildDefaultIntent(Context context, Class<?> destination) { return new Intent(context, destination); 
+        public static Intent buildDefaultIntent(Context context, Class<?> destination) { return new Intent(context, destination); } 
         public static Intent buildBlankIntent() { return new Intent(); }
     }
 
