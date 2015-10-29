@@ -45,12 +45,31 @@ public class RecycleRush extends Match {
     public boolean robotWasPoorlyDriven;
     public String comments;
 
-    //TODO: Finish adding items to Unparcel
     public RecycleRush(int mN, int tN) {
         super(mN, tN);
     }
     protected RecycleRush(Parcel in) {
         super(in);
+        autonMode = in.readString();
+        numberOfAcquiredBinsInAuton = in.readInt();
+        numberOfAutonFoulPoints = in.readInt();
+        numAutonCansAttemptedToBurgle = in.readInt();
+        numAutonCansBurgled = in.readInt();
+        canBurglingSpeed = in.readDouble();
+        wasACOOPSetScoredInTeleop = readValue(in.readInt());
+        wasACOOPStackScoredInTeleop = readValue(in.readInt());
+        areStacksDown = readValue(in.readInt());
+        robotDidCap= readValue(in.readInt());
+        numberOfCaps = in.readInt();
+        numberOfStacksScoredInTeleop = in.readInt();
+        toteSource = in.readString();
+        stacks = in.readArrayList(null);
+        numberOfTeleopFoulPoints = in.readInt();
+        thisRobotsAproxAutonScore = in.readInt();
+        thisRobotsAproxTeleopScore = in.readInt();
+        thisRobotsAproxCOOPScore = in.readInt();
+        thisRobotsAproxTotalScore = in.readInt();
+        totalAllianceScore = in.readInt();
     }
 
     public void putAutonInfo(String mode, int numAcquiredBins, int numFouls) {
@@ -285,9 +304,28 @@ public class RecycleRush extends Match {
         } else return 0;
     }
 
-    //TODO: Finish adding items to Parcel
     @Override public void writeToParcel(Parcel out, int flags) {
         super.writeToParcel(out, flags);
+        out.writeString(autonMode);
+        out.writeInt(numberOfAcquiredBinsInAuton);
+        out.writeInt(numberOfAutonFoulPoints);
+        out.writeInt(numAutonCansAttemptedToBurgle);
+        out.writeInt(numAutonCansBurgled);
+        out.writeDouble(canBurglingSpeed);
+        out.writeInt(writeVal(wasACOOPSetScoredInTeleop));
+        out.writeInt(writeVal(wasACOOPStackScoredInTeleop));
+        out.writeInt(writeVal(areStacksDown));
+        out.writeInt(writeVal(robotDidCap));
+        out.writeInt(numberOfCaps);
+        out.writeInt(numberOfStacksScoredInTeleop);
+        out.writeString(toteSource);
+        out.writeList(stacks);
+        out.writeInt(numberOfTeleopFoulPoints);
+        out.writeInt(thisRobotsAproxAutonScore);
+        out.writeInt(thisRobotsAproxTeleopScore);
+        out.writeInt(thisRobotsAproxCOOPScore);
+        out.writeInt(thisRobotsAproxTotalScore);
+        out.writeInt(totalAllianceScore);
     }
 
     public static final Parcelable.Creator<RecycleRush> CREATOR
@@ -300,4 +338,14 @@ public class RecycleRush extends Match {
             return new RecycleRush[size];
         }
     };
+
+    private boolean readValue(int val) {
+        if (val == 0) { return true; }
+        return false;
+    }
+
+    private int writeVal(boolean val) {
+        if (val) { return 0; }
+        return 1;
+    }
 }
