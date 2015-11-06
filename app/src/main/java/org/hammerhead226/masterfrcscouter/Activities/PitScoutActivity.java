@@ -11,15 +11,20 @@ import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
 
 import org.hammerhead226.masterfrcscouter.android.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 //TODO: Refactor
 public class PitScoutActivity extends AppCompatActivity {
+
+    @Bind(R.id.webView)
     WebView myWebView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pit_scout);
-        myWebView = (WebView)findViewById(R.id.webView);
+        ButterKnife.bind(this);
         myWebView.loadUrl(Constants.GoogleFormsURL);
     }
 

@@ -32,6 +32,8 @@ import org.hammerhead226.masterfrcscouter.android.R;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,10 +47,12 @@ public class MainActivity extends AppCompatActivity {
     public static Logger logger;
 
     Button matchScout, pitScout, info, TBABtn, exportData, logOut;
+    @Bind(R.id.navList)
+    ListView mDrawerList;
+    @Bind(R.id.drawer_layout)
+    DrawerLayout mDrawerLayout;
 
     private Toolbar toolbar;
-    private ListView mDrawerList;
-    private DrawerLayout mDrawerLayout;
     private ArrayAdapter<String> mAdapter;
     private ActionBarDrawerToggle mDrawerToggle;
     private String mActivityTitle;
@@ -63,14 +67,13 @@ public class MainActivity extends AppCompatActivity {
         logger = app.initLogger();
         csvFile = new File(Constants.getMatchDataDir(), "Matches.csv");
         setContentView(R.layout.activity_main);
-        toolbar = (Toolbar)findViewById(R.id.tool_bar);
+        ButterKnife.bind(this);
+        toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         //pitScout.setOnClickListener(this);
         info = (Button) (findViewById(R.id.info));
         //info.setOnClickListener(this);
         //TBABtn.setOnClickListener(this);
-        mDrawerList = (ListView)findViewById(R.id.navList);
-        mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
         mActivityTitle = getTitle().toString();
 
         addDrawerItems();
@@ -82,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addDrawerItems() {
-        String[] osArray = { "Match Scout", "Pit Scout", "About", "The Blue Alliance", "Export Data", "Settings", "Log Out"};
+        String[] osArray = {"Match Scout", "Pit Scout", "About", "The Blue Alliance", "Export Data", "Settings", "Log Out"};
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
         mDrawerList.setAdapter(mAdapter);
 

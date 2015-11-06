@@ -19,32 +19,41 @@ import com.adithyasairam.masterfrcscouter.Backend.Scouting.RecycleRush.RecycleRu
 
 import org.hammerhead226.masterfrcscouter.android.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 @Changeable(source = AutonMatchScoutActivity.class,
         when = Changeable.When.YEARLY, priority = Changeable.Priority.HIGH)
 public class MatchScoutSubmitActivity extends AppCompatActivity implements View.OnClickListener {
-    Button submit;
-    Switch poorlyDrivenRobot;
-    EditText allianceScore;
-    TextView comments;
+
     RecycleRush match;
+
+    @Bind(R.id.badDrivingSwitch)
+    Switch poorlyDrivenRobot;
+    @Bind(R.id.allianceSelectionET)
+    EditText allianceScore;
+    @Bind(R.id.commentsTextArea)
+    TextView comments;
+    @Bind(R.id.nextBttn)
+    Button submit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        try { match = Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, getIntent()); }
-        catch(Exception e) { e.printStackTrace(); }
+        try {
+            match = Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, getIntent());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         setContentView(R.layout.activity_match_scout_submit);
-        submit = (Button) (findViewById(R.id.nextBttn));
+        ButterKnife.bind(this);
         submit.setOnClickListener(this);
-        comments = (TextView) (findViewById(R.id.commentsTextArea));
-        allianceScore = (EditText) (findViewById(R.id.allianceSelectionET));
-        poorlyDrivenRobot = (Switch) (findViewById(R.id.badDrivingSwitch));
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-       // getMenuInflater().inflate(R.menu.menu_match_scout_submit, menu);
+        // getMenuInflater().inflate(R.menu.menu_match_scout_submit, menu);
         return true;
     }
 

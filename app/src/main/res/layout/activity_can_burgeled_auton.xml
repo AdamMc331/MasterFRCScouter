@@ -9,40 +9,43 @@
     tools:context="org.hammerhead226.masterfrcscouter.Activities.CanBurgeledAutonActivity">
 
     <EditText
-        android:layout_width="145dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:inputType="number"
         android:ems="10"
         android:id="@+id/numCansAttempted"
+        android:gravity = "center"
         android:layout_gravity="center_horizontal|top"
         android:hint="@string/numCansAttemptedText"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="61dp" />
+        android:layout_marginTop="61dp"
+        android:layout_height="wrap_content" />
 
     <EditText
-        android:layout_width="145dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number"
+        android:gravity = "center"
         android:ems="10"
         android:id="@+id/numCansGrabbed"
         android:layout_gravity="center_horizontal|top"
         android:hint="@string/numCansGrabbedText"
-        android:layout_above="@+id/canSpeedInstructions"
-        android:layout_alignStart="@+id/numCansAttempted"
-        android:layout_marginBottom="58dp" />
+        android:layout_marginTop="78dp"
+        android:layout_below="@+id/numCansAttempted"
+        android:layout_alignStart="@+id/numCansAttempted" />
 
     <EditText
-        android:layout_width="145dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
+        android:gravity = "center"
         android:ems="10"
         android:id="@+id/canBurglingSpeed"
         android:layout_gravity="center_horizontal|top"
         android:hint="@string/canBuglingSpeed"
-        android:layout_above="@+id/donePlsButton"
-        android:layout_alignStart="@+id/numCansGrabbed"
-        android:layout_marginBottom="51dp" />
+        android:layout_marginTop="53dp"
+        android:layout_below="@+id/canSpeedInstructions"
+        android:layout_alignStart="@+id/numCansGrabbed" />
 
     <Button
         android:layout_width="wrap_content"
@@ -57,9 +60,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/canSpeedInstructionsText"
+        android:textSize="20dp"
         android:id="@+id/canSpeedInstructions"
-        android:layout_above="@+id/canBurglingSpeed"
+        android:layout_below="@+id/numCansGrabbed"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp" />
+        android:layout_marginTop="72dp" />
 
 </RelativeLayout>
