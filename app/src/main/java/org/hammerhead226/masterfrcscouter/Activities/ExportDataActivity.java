@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 
 import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
@@ -20,19 +19,21 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
-public class ExportDataActivity extends AppCompatActivity implements View.OnClickListener{
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+public class ExportDataActivity extends AppCompatActivity {
 
     private static final String TAG = "ExportDataActivity";
-    Button exportData, mainMenu;
+    @Bind(R.id.exportDataButton) Button exportData;
+    @Bind(R.id.goHomeButtonDos) Button mainMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_export_data);
-        exportData = (Button)(findViewById(R.id.exportDataButton));
-        exportData.setOnClickListener(this);
-        mainMenu = (Button) (findViewById(R.id.goHomeButtonDos));
-        mainMenu.setOnClickListener(this);
+        ButterKnife.bind(this);
     }
 
     @Override
@@ -52,42 +53,23 @@ public class ExportDataActivity extends AppCompatActivity implements View.OnClic
         return true;
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.exportDataButton:
-                sendEmail(getFilesToSend());
-                break;
-            case R.id.goHomeButtonDos:
-                backupFile();
-                startActivity(new Intent(this, MainActivity.class));
-                break;
-        }
-    }
-
-    public List<File> getFilesToSend() {
-        File files = Constants.getMatchDataDir();
-        return Arrays.asList(files.listFiles());
-    }
-
-    public void sendEmail(List<File> filesToAttach) {
+    @OnClick(R.id.exportDataButton) public void sendFilesByEmail() {
         try {
             String email = P.email.get();
             Intent intent = new Intent(Intent.ACTION_SENDTO);
             intent.setData(Uri.parse("mailto:")); // only email apps should handle this
             intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email}); // recipients
-            for (File f : filesToAttach) {
+            for (File f : getFilesToSend()) {
                 intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(f));
             }
             intent.putExtra(Intent.EXTRA_SUBJECT, Scouter.scouterName + "'s scouting data");
             startActivity(intent);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void backupFile() {
+    @OnClick(R.id.goHomeButtonDos) public void goHome() {
         try {
             long millis = System.currentTimeMillis();
             File backupFile = new File(Constants.getMatchDataBackupDir(), "Matches-" + millis + ".csv");
@@ -97,5 +79,11 @@ public class ExportDataActivity extends AppCompatActivity implements View.OnClic
         } catch (Exception e) {
             e.printStackTrace();
         }
+        startActivity(new Intent(this, MainActivity.class));
+    }
+
+    public List<File> getFilesToSend() {
+        File files = Constants.getMatchDataDir();
+        return Arrays.asList(files.listFiles());
     }
 }

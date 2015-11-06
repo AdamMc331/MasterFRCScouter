@@ -23,26 +23,34 @@ import org.hammerhead226.masterfrcscouter.android.R;
 import java.util.Arrays;
 import java.util.List;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 @Changeable(source = AutonMatchScoutActivity.class,
         when = Changeable.When.YEARLY, priority = Changeable.Priority.HIGH)
-public class AutonMatchScoutActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
-
-    EditText acquiredStepBins, autoFouls;
-    TextView autonSelectionTV;
-    ListView autonListView;
-    Button goToTeleop;
-
+public class AutonMatchScoutActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     String autonSelection = "";
     CharSequence origText = null;
 
     RecycleRush match;
 
+    @Bind(R.id.autonItems) ListView autonListView;
+    @Bind(R.id.acquiredStepBins) EditText acquiredStepBins;
+    @Bind(R.id.numAutoFouls) EditText autoFouls;
+    @Bind(R.id.goToTeleop) Button goToTeleop;
+    @Bind(R.id.autonSelectionTV) TextView autonSelectionTV;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        try { match = Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, getIntent()); }
-        catch(Exception e) { e.printStackTrace(); }
+        try {
+            match = Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, getIntent());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         setContentView(R.layout.activity_auton_match_scout);
+        ButterKnife.bind(this);
         autonListView = (ListView) findViewById(R.id.autonItems);
         final List<String> values = Arrays.asList("Drove to Auto Zone",
                 "Set Scored", "Tote Set Scored", "Stacked Tote Set Scored", "Bin Set", "Can Burgled", "Did Nothing");
@@ -50,12 +58,7 @@ public class AutonMatchScoutActivity extends AppCompatActivity implements View.O
                 android.R.layout.simple_list_item_1, values);
         autonListView.setAdapter(adapter);
         autonListView.setOnItemClickListener(this);
-        acquiredStepBins = (EditText)(findViewById(R.id.acquiredStepBins));
-        autonSelectionTV = (TextView) (findViewById(R.id.autonSelectionTV));
         origText = autonSelectionTV.getText(); //don't change pls?
-        autoFouls = (EditText)(findViewById(R.id.numAutoFouls));
-        goToTeleop = (Button)(findViewById(R.id.goToTeleop));
-        goToTeleop.setOnClickListener(this);
     }
 
     @Override
@@ -76,32 +79,8 @@ public class AutonMatchScoutActivity extends AppCompatActivity implements View.O
     }
 
     @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.goToTeleop:
-                startActivity(new Intents.IntentBuilder().toClass(TeleopMatchScoutActivity.class).withContext(this).withSerializable(Constants.MATCH_KEY, match).build());
-                break;
-        }
-    }
-
-    @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-        String[] values = new String[]{"Drove to Auto Zone",
-                "Set Scored", "Tote Set Scored", "Stacked Tote Set Scored", "Bin Set", "Can Burgled", "Did Nothing"};
-        autonSelection = values[position]; //Shady
-        updateAutonTVText();
-        if (Arrays.asList(values).indexOf(autonSelection) == -1) {
-            ///WTF this should never happen
-        }
-        if (autonSelection.equals("Can Burgled")) {
-            setBlank();
-            Intent intent = new Intents.IntentBuilder().toClass(CanBurgeledAutonActivity.class).withContext(this).withSerializable(Constants.MATCH_KEY, match).build();
-            startActivityForResult(intent, RESULT_OK);
-        }
-        if (autonSelection.equals("Did Nothing")) {
-            setBlank();
-        }
-        parseData();
+
     }
 
     @Override
@@ -112,9 +91,16 @@ public class AutonMatchScoutActivity extends AppCompatActivity implements View.O
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
-            try { match = Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, data); }
-            catch(Exception e) { e.printStackTrace(); }
+            try {
+                match = Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, data);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+    }
+
+    @OnClick(R.id.goToTeleop) public void goToTeleop() {
+        startActivity(new Intents.IntentBuilder().toClass(TeleopMatchScoutActivity.class).withContext(this).withSerializable(Constants.MATCH_KEY, match).build());
     }
 
     private void parseData() {
@@ -122,8 +108,8 @@ public class AutonMatchScoutActivity extends AppCompatActivity implements View.O
             int aB = Integer.parseInt(acquiredStepBins.getText().toString());
             int aF = Integer.parseInt(autoFouls.getText().toString());
             match.putAutonInfo(autonSelection, aB, aF);
+        } catch (Exception e) {
         }
-        catch (Exception e) { }
     }
 
     private void updateAutonTVText() {

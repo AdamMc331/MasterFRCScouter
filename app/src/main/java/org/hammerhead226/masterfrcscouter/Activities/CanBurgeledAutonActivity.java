@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import com.adithyasairam.Utils.Annotations.Changeable;
@@ -16,26 +14,30 @@ import com.adithyasairam.masterfrcscouter.Backend.Scouting.RecycleRush.RecycleRu
 
 import org.hammerhead226.masterfrcscouter.android.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 @Changeable(source = AutonMatchScoutActivity.class,
         when = Changeable.When.YEARLY, priority = Changeable.Priority.HIGH, changeType = Changeable.ChangeType.REMOVE)
-public class CanBurgeledAutonActivity extends AppCompatActivity implements View.OnClickListener {
-
-    EditText NumAtt, NumGrabbed, Speed;
-    Button done;
-
+public class CanBurgeledAutonActivity extends AppCompatActivity {
     RecycleRush match;
+
+    @Bind(R.id.numCansAttempted) EditText numCansAttempted;
+    @Bind(R.id.numCansGrabbed) EditText numCansGrabbed;
+    @Bind(R.id.canBurglingSpeed) EditText canBurglingSpeed;
+    //@Bind(R.id.donePlsButton) Button donePlsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        try { match = Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, getIntent()); }
-        catch(Exception e) { e.printStackTrace(); }
+        try {
+            match = Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, getIntent());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         setContentView(R.layout.activity_can_burgeled_auton);
-        NumAtt = (EditText) (findViewById(R.id.numCansAttempted));
-        NumGrabbed = (EditText) (findViewById(R.id.numCansGrabbed));
-        Speed = (EditText) (findViewById(R.id.canBurglingSpeed));
-        done = (Button) (findViewById(R.id.donePlsButton));
-        done.setOnClickListener(this);
+        ButterKnife.bind(this);
     }
 
     @Override
@@ -55,26 +57,17 @@ public class CanBurgeledAutonActivity extends AppCompatActivity implements View.
         return true;
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.donePlsButton:
-                parseData();
-                Intent data = new Intents.IntentBuilder().withSerializable(Constants.MATCH_KEY, match).build();
-                setResult(RESULT_OK, data);
-                finish();
-                break;
-        }
-    }
-
-    public void parseData() {
+    @OnClick(R.id.donePlsButton) public void imDoneSoYouGucci() {
         try {
-            int numAttempted = Integer.parseInt(NumAtt.getText().toString());
-            int numGrabbed = Integer.parseInt(NumGrabbed.getText().toString());
-            double speed = Double.parseDouble(Speed.getText().toString());
+            int numAttempted = Integer.parseInt(numCansAttempted.getText().toString());
+            int numGrabbed = Integer.parseInt(numCansGrabbed.getText().toString());
+            double speed = Double.parseDouble(canBurglingSpeed.getText().toString());
             match.putCanAutonInfo(numAttempted, numGrabbed, speed);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        Intent data = new Intents.IntentBuilder().withSerializable(Constants.MATCH_KEY, match).build();
+        setResult(RESULT_OK, data);
+        finish();
     }
 }
