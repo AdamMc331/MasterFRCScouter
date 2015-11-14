@@ -22,38 +22,57 @@ import org.hammerhead226.masterfrcscouter.android.R;
 
 import java.util.ArrayList;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 @Changeable(source = TeleopMatchScoutActivity.class,
         when = Changeable.When.YEARLY, priority = Changeable.Priority.HIGH)
-public class TeleopMatchScoutActivity extends AppCompatActivity implements View.OnClickListener{
+public class TeleopMatchScoutActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button stackSubmit, nextButton;
-    EditText numTeleFouls, stackHeight, numCansCapped;
-    Switch coopSet, coopStack, knockedOverStacks, didCapCans;
-    CheckBox canOnTopWithLitter, canOnTop, totesFromHF, totesFromLF;
+
     RecycleRush match;
     public static ArrayList<RRStack> rrStackArrayList;
+    @Bind(R.id.submitStack)
+    Button stackSubmit;
+    @Bind(R.id.stackHeightET)
+    EditText stackHeight;
+    @Bind(R.id.canOnTopWithLitterCB)
+    CheckBox canOnTopWithLitter;
+    @Bind(R.id.canOnTopCB)
+    CheckBox canOnTop;
+    @Bind(R.id.totesFromHumanFeeder)
+    CheckBox totesFromHF;
+    @Bind(R.id.totesFromLandfill)
+    CheckBox totesFromLF;
+    @Bind(R.id.canCappedSwitch)
+    Switch didCapCans;
+    @Bind(R.id.numCansCappedET)
+    EditText numCansCapped;
+    @Bind(R.id.coopSetSwitch)
+    Switch coopSet;
+    @Bind(R.id.coopStackSwitch)
+    Switch coopStack;
+    @Bind(R.id.knockedStackSwitch)
+    Switch knockedOverStacks;
+    @Bind(R.id.numTeleFoulsET)
+    EditText numTeleFouls;
+    @Bind(R.id.nextBttn)
+    Button nextButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        try { match = Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, getIntent()); }
-        catch(Exception e) { e.printStackTrace(); }
+        try {
+            match = Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, getIntent());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         rrStackArrayList = new ArrayList<RRStack>(5);
         setContentView(R.layout.activity_teleop_match_scout);
-        numTeleFouls = (EditText)(findViewById(R.id.numTeleFoulsET));
-        numCansCapped = (EditText) (findViewById(R.id.numCansCappedET));
-        canOnTopWithLitter = (CheckBox)(findViewById(R.id.canOnTopWithLitterCB));
-        canOnTop = (CheckBox)(findViewById(R.id.canOnTopCB));
-        coopSet = (Switch)(findViewById(R.id.coopSetSwitch));
-        coopStack = (Switch)(findViewById(R.id.coopStackSwitch));
-        knockedOverStacks = (Switch) (findViewById(R.id.knockedStackSwitch));
-        didCapCans = (Switch) (findViewById(R.id.canCappedSwitch));
-        stackHeight = (EditText)(findViewById(R.id.stackHeightET));
-        stackSubmit = (Button)(findViewById(R.id.submitStack));
+        ButterKnife.bind(this);
+
         stackSubmit.setOnClickListener(this);
-        totesFromHF = (CheckBox) (findViewById(R.id.totesFromHumanFeeder));
-        totesFromLF = (CheckBox) (findViewById(R.id.totesFromLandfill));
-        nextButton = (Button) (findViewById(R.id.nextBttn));
+
         nextButton.setOnClickListener(this);
     }
 
@@ -98,8 +117,9 @@ public class TeleopMatchScoutActivity extends AppCompatActivity implements View.
                     parseData();
                     startActivity(new Intents.IntentBuilder().toClass(MatchScoutSubmitActivity.class).withContext(this).withSerializable(Constants.MATCH_KEY, match).build());
                     break;
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                catch (Exception e) { e.printStackTrace(); }
         }
     }
 
@@ -113,8 +133,8 @@ public class TeleopMatchScoutActivity extends AppCompatActivity implements View.
             boolean didCap = didCapCans.isChecked();
             String toteSource = getToteSource();
             match.putTeleopInfo(cSet, cStack, stackDown, didCap, nCC, toteSource, nTF, rrStackArrayList);
+        } catch (Exception e) {
         }
-        catch (Exception e) { }
     }
 
     public String getToteSource() {

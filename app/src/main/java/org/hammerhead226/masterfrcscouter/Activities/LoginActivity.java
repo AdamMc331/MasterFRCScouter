@@ -18,33 +18,43 @@ import com.crashlytics.android.Crashlytics;
 
 import org.hammerhead226.masterfrcscouter.android.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import io.fabric.sdk.android.Fabric;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "LoginActivity";
     public static String scouterName;
     public static int scoutingPosition;
     public static boolean isRedScouter;
 
-    EditText Name, Position;
+    @Bind(R.id.bLogin)
     Button bLogin;
-    CheckBox rA, bA, pS;
+    @Bind(R.id.scouterName)
+    EditText Name;
+    @Bind(R.id.editText)
+    EditText Position;
+    @Bind(R.id.rACheckbox)
+    CheckBox rA;
+    @Bind(R.id.bACheckbox)
+    CheckBox bA;
+    @Bind(R.id.pitScoutCheckbox)
+    CheckBox pS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_login);
-        Name = (EditText)findViewById(R.id.scouterName);
-        Position = (EditText) findViewById(R.id.editText);
-        rA = (CheckBox) findViewById(R.id.rACheckbox);
+        ButterKnife.bind(this);
+
         rA.setOnClickListener(this);
-        bA = (CheckBox) findViewById(R.id.bACheckbox);
+
         bA.setOnClickListener(this);
-        pS = (CheckBox) findViewById(R.id.pitScoutCheckbox);
+
         pS.setOnClickListener(this);
-        bLogin = (Button)(findViewById(R.id.bLogin));
+
         bLogin.setOnClickListener(this);
     }
 
@@ -72,16 +82,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void onClick(View v) {
-        switch(v.getId()) {
+        switch (v.getId()) {
             case R.id.rACheckbox:
                 if ((rA.isChecked() && bA.isChecked())) {
                     Toast.makeText(getApplicationContext(), "You have selected to scout both the Red and Blue Alliance.!", Toast.LENGTH_SHORT).show();
                     break;
                 }
                 //sets the color to red if they select the red checkbox
-                if(rA.isChecked()){
+                if (rA.isChecked()) {
                     bLogin.setBackgroundColor(Color.parseColor("#F44336"));
-                }else{
+                } else {
                     bLogin.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 }
                 isRedScouter = true;
@@ -94,9 +104,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     break;
                 }
                 //sets the button color to blue if they select the blue checkbox
-                if(bA.isChecked()){
+                if (bA.isChecked()) {
                     bLogin.setBackgroundColor(Color.parseColor("#2196F3"));
-                }else{
+                } else {
                     bLogin.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 }
                 isRedScouter = false;
@@ -118,12 +128,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     Log.i(TAG, "Login complete.");
                     Scouter.startSession();
                     Log.i(TAG, "Scouting session started at: " + Scouter.sessionStartTime + ".");
-                    Log.i(TAG,  "Switching to main activity.");
+                    Log.i(TAG, "Switching to main activity.");
                     startActivity(new Intent(this, MainActivity.class));
                     finish();
                     break;
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                catch (Exception e) {e.printStackTrace(); }
         }
     }
 }

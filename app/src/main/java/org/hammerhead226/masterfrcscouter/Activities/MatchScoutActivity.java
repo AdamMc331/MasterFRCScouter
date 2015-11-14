@@ -18,22 +18,28 @@ import com.adithyasairam.masterfrcscouter.Backend.Scouting.RecycleRush.RecycleRu
 
 import org.hammerhead226.masterfrcscouter.android.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 @Changeable(source = MatchScoutActivity.class,
         when = Changeable.When.YEARLY, priority = Changeable.Priority.HIGH)
-public class MatchScoutActivity extends AppCompatActivity implements View.OnClickListener{
+public class MatchScoutActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button autonButton, goHomeButton;
-    EditText teamNumberET, matchNumberET;
     Match match = null;
+
+    @Bind(R.id.teamNumberET)
+    EditText teamNumberET;
+    @Bind(R.id.matchNumberET)
+    EditText matchNumberET;
+    @Bind(R.id.autonButton)
+    Button autonButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match_scout);
-        autonButton = (Button)(findViewById(R.id.autonButton));
+        ButterKnife.bind(this);
         autonButton.setOnClickListener(this);
-        teamNumberET = (EditText)(findViewById(R.id.teamNumberET));
-        matchNumberET = (EditText)(findViewById(R.id.matchNumberET));
     }
 
     @Override
@@ -54,18 +60,20 @@ public class MatchScoutActivity extends AppCompatActivity implements View.OnClic
     }
 
     @Override
-    public void onBackPressed() { startActivity(new Intent(this, MainActivity.class)); } //Go home
+    public void onBackPressed() {
+        startActivity(new Intent(this, MainActivity.class));
+    } //Go home
 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.autonButton:
                 //ensures that the form fields are filled out or else the app crashes
-                if((!teamNumberET.getText().toString().equals(""))&& (!matchNumberET.getText().toString().equals(""))){
+                if ((!teamNumberET.getText().toString().equals("")) && (!matchNumberET.getText().toString().equals(""))) {
                     parseData();
                     startActivity(new Intents.IntentBuilder().toClass(AutonMatchScoutActivity.class).withContext(this).withSerializable(Constants.MATCH_KEY, match).build());
                     break;
-                }else{
-                    Toast.makeText(getApplicationContext(),"Please make sure both fields are filled out",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Please make sure both fields are filled out", Toast.LENGTH_SHORT).show();
                     break;
                 }
         }
