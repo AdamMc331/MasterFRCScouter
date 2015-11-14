@@ -21,12 +21,8 @@ import android.widget.ListView;
 import com.adithyasairam.Utils.SimpleLogger.Logger;
 import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
 import com.adithyasairam.masterfrcscouter.Backend.Scouting.Scouter;
-import com.crashlytics.android.Crashlytics;
-import com.digits.sdk.android.Digits;
-import com.twitter.sdk.android.core.TwitterAuthConfig;
-import com.twitter.sdk.android.core.TwitterCore;
 
-import org.hammerhead226.masterfrcscouter.Misc.MyApplication;
+import org.hammerhead226.masterfrcscouter.Misc.MasterFRCScouterApplication;
 import org.hammerhead226.masterfrcscouter.android.R;
 
 import java.io.File;
@@ -34,14 +30,13 @@ import java.util.concurrent.TimeUnit;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 
     public static Scouter instance;
 
-    protected MyApplication app;
+    protected MasterFRCScouterApplication app;
 
     public static File csvFile;
     public static Logger logger;
@@ -60,10 +55,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TwitterAuthConfig authConfig = new TwitterAuthConfig(Constants.TWITTER_KEY, Constants.TWITTER_SECRET);
-        Fabric.with(this, new Crashlytics(), new TwitterCore(authConfig), new Digits());
         instance = new Scouter();
-        app = (MyApplication) getApplication();
+        app = (MasterFRCScouterApplication) getApplication();
         logger = app.initLogger();
         csvFile = new File(Constants.getMatchDataDir(), "Matches.csv");
         setContentView(R.layout.activity_main);

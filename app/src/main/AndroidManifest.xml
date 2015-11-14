@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
-        android:name="org.hammerhead226.masterfrcscouter.Misc.MyApplication"
+        android:name="org.hammerhead226.masterfrcscouter.Misc.MasterFRCScouterApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -22,6 +22,9 @@
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="1ed35bd312c41111e97ba68eb810d5f712e60535" />
+        <meta-data
+            android:name="com.bugsnag.android.API_KEY"
+            android:value="adcd8a0b056037f960ced2e5c5c2674e"/>
 
         <activity
             android:name="org.hammerhead226.masterfrcscouter.Activities.LoginActivity"

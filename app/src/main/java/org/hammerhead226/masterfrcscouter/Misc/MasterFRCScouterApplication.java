@@ -4,21 +4,37 @@ import android.support.multidex.MultiDexApplication;
 
 import com.adithyasairam.Utils.SimpleLogger.Logger;
 import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
+import com.bugsnag.android.Bugsnag;
+import com.crashlytics.android.Crashlytics;
+import com.digits.sdk.android.Digits;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import com.twitter.sdk.android.core.TwitterCore;
 
 import org.hammerhead226.masterfrcscouter.android.P;
 
 import java.io.File;
 
+import io.fabric.sdk.android.Fabric;
+
 /**
  * Created by Adi on 9/6/2015.
  * Source: http://www.devahead.com/blog/2011/06/extending-the-android-application-class-and-dealing-with-singleton/
  */
-public class MyApplication extends MultiDexApplication { //Extends MultiDexApplication to allow for Multi Dex Support
+public class MasterFRCScouterApplication extends MultiDexApplication { //Extends MultiDexApplication to allow for Multi Dex Support
     @Override
     public void onCreate() {
         super.onCreate();
         P.init(this);
+        initFabric();
+        initBugsnag();
     }
+
+    private void initFabric() {
+        TwitterAuthConfig authConfig = new TwitterAuthConfig(Constants.TWITTER_KEY, Constants.TWITTER_SECRET);
+        Fabric.with(this, new Crashlytics(), new TwitterCore(authConfig), new Digits());
+    }
+
+    public void initBugsnag() { Bugsnag.init(this); }
 
     public Logger initLogger() {
         Logger logger = null;
