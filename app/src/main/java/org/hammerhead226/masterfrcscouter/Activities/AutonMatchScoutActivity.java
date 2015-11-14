@@ -80,7 +80,22 @@ public class AutonMatchScoutActivity extends AppCompatActivity implements Adapte
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-
+        String[] values = new String[]{"Drove to Auto Zone",
+                               "Set Scored", "Tote Set Scored", "Stacked Tote Set Scored", "Bin Set", "Can Burgled", "Did Nothing"};
+        autonSelection = values[position]; //Shady
+        updateAutonTVText();
+        if (Arrays.asList(values).indexOf(autonSelection) == 1) {
+            ///WTF this should never happen
+        }
+        if (autonSelection.equals("Can Burgled")) {
+            setBlank();
+            Intent intent = new Intents.IntentBuilder().toClass(CanBurgeledAutonActivity.class).withContext(this).withSerializable(Constants.MATCH_KEY, match).build();
+            startActivityForResult(intent, RESULT_OK);
+        }
+        if (autonSelection.equals("Did Nothing")) {
+            setBlank();
+        }
+        parseData();
     }
 
     @Override

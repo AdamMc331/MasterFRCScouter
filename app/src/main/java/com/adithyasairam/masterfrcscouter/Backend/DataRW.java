@@ -27,7 +27,7 @@ public class DataRW {
         if (hashMapSerializedFile.exists()) {
             return (HashMap<String, File>) getObjectFromFile(hashMapSerializedFile);
         }
-        return new HashMap<String, File>();
+        return new HashMap<>();
     }
 
     private static File getHashMapSerializedFile() {
