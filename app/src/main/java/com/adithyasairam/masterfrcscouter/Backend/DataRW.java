@@ -1,7 +1,5 @@
 package com.adithyasairam.masterfrcscouter.Backend;
 
-import android.os.Environment;
-
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -31,10 +29,7 @@ public class DataRW {
     }
 
     private static File getHashMapSerializedFile() {
-        File appDir = new File(Environment.getExternalStorageDirectory() + "/MasterFRCScouter");
-        appDir.mkdirs();
-        File dir = new File(appDir.getAbsolutePath() + "/ObjectData");
-        dir.mkdirs();
+        File dir = Constants.getInternalDataDir();
         return new File(dir.getAbsolutePath(), "filePathsMap.ser");
     }
 

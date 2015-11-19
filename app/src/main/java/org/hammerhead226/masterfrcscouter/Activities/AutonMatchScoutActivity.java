@@ -14,8 +14,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.adithyasairam.Utils.Annotations.Changeable;
-import com.adithyasairam.masterfrcscouter.Backend.Intents;
-import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
+import com.adithyasairam.android.androidcommons.Utils.Intents;
+import com.adithyasairam.masterfrcscouter.Backend.Constants;
 import com.adithyasairam.masterfrcscouter.Backend.Scouting.RecycleRush.RecycleRush;
 
 import org.hammerhead226.masterfrcscouter.android.R;

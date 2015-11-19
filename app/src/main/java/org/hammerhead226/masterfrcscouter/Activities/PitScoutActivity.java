@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
 
-import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
+import com.adithyasairam.masterfrcscouter.Backend.Constants;
 
 import org.hammerhead226.masterfrcscouter.android.R;
 

@@ -21,7 +21,7 @@ public abstract class Match implements Serializable, Parcelable, Comparable<Matc
     public Match(int mN, int tN) {
         matchNumber = mN;
         teamNumber = tN;
-        defaults(); //set default values
+        init(); //set default values
     }
 
     protected Match(Parcel in) {
@@ -34,7 +34,7 @@ public abstract class Match implements Serializable, Parcelable, Comparable<Matc
 
     public abstract String[] getHeaders();
     public abstract String[] getData();
-    public abstract void defaults();
+    public abstract void init();
     public abstract void fieldReset();
     public abstract int calculateThisRobotsAproxAutonScore();
     public abstract int calculateThisRobotsAproxTeleopScore();

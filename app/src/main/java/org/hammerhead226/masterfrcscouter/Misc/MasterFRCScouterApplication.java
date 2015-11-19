@@ -1,9 +1,10 @@
 package org.hammerhead226.masterfrcscouter.Misc;
 
+import android.content.Context;
 import android.support.multidex.MultiDexApplication;
 
 import com.adithyasairam.Utils.SimpleLogger.Logger;
-import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
+import com.adithyasairam.masterfrcscouter.Backend.Constants;
 import com.bugsnag.android.Bugsnag;
 import com.crashlytics.android.Crashlytics;
 import com.digits.sdk.android.Digits;
@@ -15,18 +16,23 @@ import org.hammerhead226.masterfrcscouter.android.P;
 import java.io.File;
 
 import io.fabric.sdk.android.Fabric;
+import io.smooch.core.Smooch;
 
 /**
  * Created by Adi on 9/6/2015.
  * Source: http://www.devahead.com/blog/2011/06/extending-the-android-application-class-and-dealing-with-singleton/
  */
 public class MasterFRCScouterApplication extends MultiDexApplication { //Extends MultiDexApplication to allow for Multi Dex Support
+    private static MasterFRCScouterApplication instance;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        instance = this;
         P.init(this);
         initFabric();
         initBugsnag();
+        initSmooch();
     }
 
     private void initFabric() {
@@ -34,9 +40,11 @@ public class MasterFRCScouterApplication extends MultiDexApplication { //Extends
         Fabric.with(this, new Crashlytics(), new TwitterCore(authConfig), new Digits());
     }
 
-    public void initBugsnag() { Bugsnag.init(this); }
+    private void initBugsnag() { Bugsnag.init(this); }
 
-    public Logger initLogger() {
+    private void initSmooch() { Smooch.init(this, Constants.SMOOCH_KEY); }
+
+    private Logger initAdiSaiLogger() {
         Logger logger = null;
         Logger.Config config = new Logger.Config() {
             @Override
@@ -60,4 +68,8 @@ public class MasterFRCScouterApplication extends MultiDexApplication { //Extends
         logger = new Logger.LoggerFactory().config(config).build();
         return logger;
     }
+
+    public static MasterFRCScouterApplication getInstance() { return instance; }
+
+    public static Context getStaticApplicationContext() { return instance.getApplicationContext(); }
 }

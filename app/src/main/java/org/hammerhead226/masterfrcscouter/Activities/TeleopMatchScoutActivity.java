@@ -13,8 +13,8 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import com.adithyasairam.Utils.Annotations.Changeable;
-import com.adithyasairam.masterfrcscouter.Backend.Intents;
-import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
+import com.adithyasairam.android.androidcommons.Utils.Intents;
+import com.adithyasairam.masterfrcscouter.Backend.Constants;
 import com.adithyasairam.masterfrcscouter.Backend.Scouting.RecycleRush.RRStack;
 import com.adithyasairam.masterfrcscouter.Backend.Scouting.RecycleRush.RecycleRush;
 
@@ -63,7 +63,7 @@ public class TeleopMatchScoutActivity extends AppCompatActivity implements View.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            match = Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, getIntent());
+            match = com.adithyasairam.android.androidcommons.Utils.Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, getIntent());
         } catch (Exception e) {
             e.printStackTrace();
         }

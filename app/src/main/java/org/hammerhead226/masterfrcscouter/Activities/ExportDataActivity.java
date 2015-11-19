@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
+import com.adithyasairam.masterfrcscouter.Backend.Constants;
 import com.adithyasairam.masterfrcscouter.Backend.Scouting.Scouter;
 import com.google.common.io.Files;
 

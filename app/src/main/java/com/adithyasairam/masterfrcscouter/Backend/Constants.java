@@ -1,9 +1,9 @@
-package com.adithyasairam.masterfrcscouter.Backend.Scouting;
+package com.adithyasairam.masterfrcscouter.Backend;
 
 
-import android.os.Environment;
+import com.adithyasairam.android.androidcommons.Utils.RealStoragePathLibrary;
 
-import com.adithyasairam.masterfrcscouter.Backend.APIKeys;
+import org.hammerhead226.masterfrcscouter.Misc.MasterFRCScouterApplication;
 
 import java.io.File;
 
@@ -13,11 +13,15 @@ import java.io.File;
 public final class Constants {
     public static final String TWITTER_KEY = APIKeys.TWITTER_KEY; //Twitter API Key
     public static final String TWITTER_SECRET = APIKeys.TWITTER_SECRET; //Twitter API Secret
+    public static final String SMOOCH_KEY = APIKeys.SMOOCH_KEY;
     public static final String MATCH_KEY = "org.hammerhead226.masterfrcscouter.android.MATCH";
     public static String GoogleFormsURL = "http://www.google.com"; //Put Google Forms URL here for Pit scouting
 
     public static File getAppDir() {
-        File appDir = new File(Environment.getExternalStorageDirectory() + "/MasterFRCScouter");
+        RealStoragePathLibrary storagePathLibrary = new RealStoragePathLibrary(MasterFRCScouterApplication.getStaticApplicationContext());
+        File appDir = null;
+        appDir = new File(storagePathLibrary.getInbuiltStorageAppSpecificDirectoryPath());
+        //appDir = new File(Environment.getExternalStorageDirectory() + "/MasterFRCScouter");
         appDir.mkdirs();
         return appDir;
     }

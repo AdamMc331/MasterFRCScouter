@@ -215,7 +215,7 @@ public class RecycleRush extends Match {
     }
 
     @Override
-    public void defaults() {
+    public void init() {
         //Auton:
         autonMode = "";
         numberOfAcquiredBinsInAuton = 0;

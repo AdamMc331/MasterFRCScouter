@@ -18,8 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.adithyasairam.Utils.SimpleLogger.Logger;
-import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
+import com.adithyasairam.masterfrcscouter.Backend.Constants;
 import com.adithyasairam.masterfrcscouter.Backend.Scouting.Scouter;
 
 import org.hammerhead226.masterfrcscouter.Misc.MasterFRCScouterApplication;
@@ -39,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
     protected MasterFRCScouterApplication app;
 
     public static File csvFile;
-    public static Logger logger;
 
     Button matchScout, pitScout, info, TBABtn, exportData, logOut;
     @Bind(R.id.navList)
@@ -57,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         instance = new Scouter();
         app = (MasterFRCScouterApplication) getApplication();
-        logger = app.initLogger();
         csvFile = new File(Constants.getMatchDataDir(), "Matches.csv");
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
@@ -106,9 +103,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 6:
                         instance.endSession();
-                        logger.Log(Logger.LogLevels.INFO, "Scouting session ended at: " + instance.sessionEndTime + ".", getClass());
                         Log.i(TAG, "Scouting session ended at: " + instance.sessionEndTime + ".");
-                        logger.Log(Logger.LogLevels.INFO, "Scouting session lasted: " + Math.abs(TimeUnit.MILLISECONDS.toMinutes(instance.getTotalTimeScouted())) + " minutes.", getClass());
                         Log.i(TAG, "Scouting session lasted: " + Math.abs(TimeUnit.MILLISECONDS.toMinutes(instance.getTotalTimeScouted())) + " minutes.");
                         startActivity(new Intent(MainActivity.this, LoginActivity.class));
                         break;

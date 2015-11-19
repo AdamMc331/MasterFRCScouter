@@ -8,8 +8,8 @@ import android.view.MenuItem;
 import android.widget.EditText;
 
 import com.adithyasairam.Utils.Annotations.Changeable;
-import com.adithyasairam.masterfrcscouter.Backend.Intents;
-import com.adithyasairam.masterfrcscouter.Backend.Scouting.Constants;
+import com.adithyasairam.android.androidcommons.Utils.Intents;
+import com.adithyasairam.masterfrcscouter.Backend.Constants;
 import com.adithyasairam.masterfrcscouter.Backend.Scouting.RecycleRush.RecycleRush;
 
 import org.hammerhead226.masterfrcscouter.android.R;
@@ -32,7 +32,7 @@ public class CanBurgeledAutonActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            match = Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, getIntent());
+            match = com.adithyasairam.android.androidcommons.Utils.Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, getIntent());
         } catch (Exception e) {
             e.printStackTrace();
         }
