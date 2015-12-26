@@ -11,18 +11,15 @@ import java.io.File;
  * Created by Adi on 7/13/2015.
  */
 public final class Constants {
-    public static final long defaultSerialVersionUID = 197001010001L; /* Date Stamp: 1970-01-01 - 00:01 */
-    public static final String TWITTER_KEY = APIKeys.TWITTER_KEY; //Twitter API Key
-    public static final String TWITTER_SECRET = APIKeys.TWITTER_SECRET; //Twitter API Secret
-    public static final String SMOOCH_KEY = APIKeys.SMOOCH_KEY; //Smooch API Key
-    public static final String MATCH_KEY = "org.hammerhead226.masterfrcscouter.android.MATCH";
+    public static final String TWITTER_KEY = "tGe6TbDafn8TvzJBfx77gKm1m"; //Twitter API Key
+    public static final String TWITTER_SECRET = "Ze9BvF5OBjgsAcMo7hUnmPwHRdu3Uni5Mw2ZGVnbfbf3Uy0cGE"; //Twitter API Secret
+    public static final String SMOOCH_KEY = "8o14mwv1miubio0e3zgx2o7qd"; //Smooch API Key
+    public static final String MATCH_KEY = "org.hammerhead226.masterfrcscouter.android.MATCH"; //Key for Intent Data transfer
     public static String GoogleFormsURL = "http://www.google.com"; //Put Google Forms URL here for Pit scouting
 
     public static File getAppDir() {
         RealStoragePathLibrary storagePathLibrary = new RealStoragePathLibrary(MasterFRCScouterApplication.getStaticApplicationContext());
-        File appDir = null;
-        appDir = new File(storagePathLibrary.getInbuiltStorageAppSpecificDirectoryPath());
-        //appDir = new File(Environment.getExternalStorageDirectory() + "/MasterFRCScouter");
+        File appDir = new File(storagePathLibrary.getInbuiltStorageAppSpecificDirectoryPath());
         appDir.mkdirs();
         return appDir;
     }
