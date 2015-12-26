@@ -1,8 +1,6 @@
 buildscript {
     repositories {
-        maven {
-            url 'https://maven.fabric.io/public'
-        }
+        maven { url 'https://maven.fabric.io/public' }
     }
 
     dependencies {
@@ -19,7 +17,18 @@ repositories {
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "21.1.2"
+    buildToolsVersion '23.0.2'
+
+    packagingOptions {
+        exclude 'META-INF/maven/com.squareup.retrofit/retrofit/pom.properties'
+        exclude 'META-INF/maven/com.squareup.retrofit/retrofit/pom.xml'
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+        jumboMode = true
+    }
+
     defaultConfig {
         applicationId 'org.hammerhead226.masterfrcscouter.android'
         minSdkVersion 19
@@ -28,35 +37,53 @@ android {
         versionName "1.0"
         multiDexEnabled true //Enabling multidex support.
     }
+
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            debuggable true
+            minifyEnabled false
+            applicationIdSuffix ".debug"
+        }
     }
+
     productFlavors {
+        dev {
+            minSdkVersion 21
+            versionName "1.0-production"
+            applicationId 'org.hammerhead226.masterfrcscouter.android.dev'
+        }
+        internal {
+            versionName "1.0-internal"
+            applicationId 'org.hammerhead226.masterfrcscouter.android.internal'
+        }
+        production {
+            versionName "1.0-production"
+            applicationId 'org.hammerhead226.masterfrcscouter.android'
+        }
     }
 }
 
 dependencies {
     //compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':commons')
     compile files('libs/TheBlueAlliance.jar')
-    compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
-        transitive = true;
-    }
-    compile('com.digits.sdk.android:digits:1.6.1@aar') {
-        transitive = true;
-    }
-    compile 'com.android.support:multidex:1.0.1'
-    compile 'com.android.support:appcompat-v7:23.1.0'
-    compile 'com.google.android.gms:play-services:8.1.0'
-    compile 'com.google.android.gms:play-services-gcm:8.1.0'
-    compile 'com.android.support:support-v4:23.1.0'
-    compile 'com.jakewharton:butterknife:7.0.1'
+    compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') { transitive = true; }
+    compile('com.digits.sdk.android:digits:1.6.1@aar') { transitive = true; }
+    compile 'com.adithyasairam.android:android-commons:latest.release'
+    compile 'com.jakewharton:butterknife:latest.release'
     compile 'com.bugsnag:bugsnag-android:latest.release'
     compile 'io.smooch:core:latest.release'
     compile 'io.smooch:ui:latest.release'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:support-v4:23.1.1'
+    compile 'com.google.android.gms:play-services:8.3.0'
+    compile 'com.google.android.gms:play-services-gcm:8.3.0'
+    compile 'com.google.android.gms:play-services-ads:8.3.0'
+    compile 'com.google.android.gms:play-services-auth:8.3.0'
 }
 
 buildscript {

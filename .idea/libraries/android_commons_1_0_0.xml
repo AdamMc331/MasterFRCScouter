@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="android-commons-1.0.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.adithyasairam.android/android-commons/1.0.0/jars/libs/Utils-Fat.jar!/" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.adithyasairam.android/android-commons/1.0.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.adithyasairam.android/android-commons/1.0.0/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.adithyasairam.android/android-commons/1.0.0/5250b7457fc397b46f09c5d40fa8be5e849d3a8f/android-commons-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

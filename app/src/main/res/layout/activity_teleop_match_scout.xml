@@ -4,7 +4,7 @@
     android:weightSum = "3"
     android:layout_height="match_parent"
 
-    tools:context="org.hammerhead226.masterfrcscouter.Activities.TeleopMatchScoutActivity">
+    tools:context="org.hammerhead226.masterfrcscouter.view.activities.TeleopMatchScoutActivity">
 
 
         <FrameLayout

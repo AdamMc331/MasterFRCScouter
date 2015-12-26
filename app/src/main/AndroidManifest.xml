@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
-        android:name="org.hammerhead226.masterfrcscouter.Misc.MasterFRCScouterApplication"
+        android:name="org.hammerhead226.masterfrcscouter.MasterFRCScouterApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -27,7 +27,7 @@
             android:value="adcd8a0b056037f960ced2e5c5c2674e"/>
 
         <activity
-            android:name="org.hammerhead226.masterfrcscouter.Activities.LoginActivity"
+            android:name="org.hammerhead226.masterfrcscouter.view.activities.LoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,49 +36,49 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.hammerhead226.masterfrcscouter.Activities.MainActivity"
+            android:name="org.hammerhead226.masterfrcscouter.view.activities.MainActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="org.hammerhead226.masterfrcscouter.Activities.MatchScoutActivity"
+            android:name="org.hammerhead226.masterfrcscouter.view.activities.MatchScoutActivity"
             android:label="@string/title_activity_match_scout" >
         </activity>
         <activity
-            android:name="org.hammerhead226.masterfrcscouter.Activities.PitScoutActivity"
+            android:name="org.hammerhead226.masterfrcscouter.view.activities.PitScoutActivity"
             android:label="@string/title_activity_pit_scout" >
         </activity>
         <activity
-            android:name="org.hammerhead226.masterfrcscouter.Activities.InfoActivity"
+            android:name="org.hammerhead226.masterfrcscouter.view.activities.InfoActivity"
             android:label="@string/title_activity_info" >
         </activity>
         <activity
-            android:name="org.hammerhead226.masterfrcscouter.Activities.TheBlueAllianceActivity"
+            android:name="org.hammerhead226.masterfrcscouter.view.activities.TheBlueAllianceActivity"
             android:label="@string/title_activity_the_blue_alliance" >
         </activity>
         <activity
-            android:name="org.hammerhead226.masterfrcscouter.Activities.ExportDataActivity"
+            android:name="org.hammerhead226.masterfrcscouter.view.activities.ExportDataActivity"
             android:label="@string/title_activity_export_data" >
         </activity>
         <activity
-            android:name="org.hammerhead226.masterfrcscouter.Activities.SettingsActivity"
+            android:name="org.hammerhead226.masterfrcscouter.view.activities.SettingsActivity"
             android:label="@string/title_activity_settings" >
         </activity>
         <activity
-            android:name="org.hammerhead226.masterfrcscouter.Activities.TeleopMatchScoutActivity"
+            android:name="org.hammerhead226.masterfrcscouter.view.activities.TeleopMatchScoutActivity"
             android:label="@string/title_activity_teleop_match_scout" >
         </activity>
         <activity
-            android:name="org.hammerhead226.masterfrcscouter.Activities.AutonMatchScoutActivity"
+            android:name="org.hammerhead226.masterfrcscouter.view.activities.AutonMatchScoutActivity"
             android:label="@string/title_activity_auton_match_scout" />
         <activity
-            android:name="org.hammerhead226.masterfrcscouter.Activities.CanBurgeledAutonActivity"
+            android:name="org.hammerhead226.masterfrcscouter.view.activities.CanBurgeledAutonActivity"
             android:label="@string/title_activity_can_burgeled_auton" />
         <activity
-            android:name="org.hammerhead226.masterfrcscouter.Activities.MatchScoutSubmitActivity"
+            android:name="org.hammerhead226.masterfrcscouter.view.activities.MatchScoutSubmitActivity"
             android:label="@string/title_activity_match_scout_submit" >
         </activity>
         <activity
-            android:name="org.hammerhead226.masterfrcscouter.Activities.UIElements.SideMenu"
+            android:name="org.hammerhead226.masterfrcscouter.view.activities.UIElements.SideMenu"
             android:label="@string/title_activity_side_menu" >
         </activity>
     </application>

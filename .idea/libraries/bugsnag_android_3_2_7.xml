@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="bugsnag-android-3.2.7">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.bugsnag/bugsnag-android/3.2.7/e575f2e140d668cfd0ed08c30626b1e79da16377/bugsnag-android-3.2.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.bugsnag/bugsnag-android/3.2.7/82c568db565516d8db253b65083353da47b4e942/bugsnag-android-3.2.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

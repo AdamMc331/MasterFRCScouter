@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Utils-Fat">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/commons/libs/Utils-Fat.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
