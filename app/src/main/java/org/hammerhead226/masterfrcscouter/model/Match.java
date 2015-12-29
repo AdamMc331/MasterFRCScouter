@@ -3,6 +3,7 @@ package org.hammerhead226.masterfrcscouter.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.hammerhead226.masterfrcscouter.backend.Constants;
 import org.hammerhead226.masterfrcscouter.backend.Scouter;
 
 import java.io.Serializable;
@@ -38,10 +39,20 @@ public abstract class Match implements Serializable, Parcelable {
 
     public Match getMatch() { return instance; }
     public MatchDataCalculator<?> getMatchDataCalculator() { return matchDataCalculator; }
+    public String compressToString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(Constants.MATCH_HEADER);
+        stringBuilder.append("\n");
+        stringBuilder.append(abstractCompressToString());
+        stringBuilder.append("\n");
+        stringBuilder.append(Constants.MATCH_FOOTER);
+        return stringBuilder.toString();
+    }
     public abstract MatchDataCalculator<?> initMatchDataCalculator();
     public abstract void init();
     public abstract void fieldReset();
-    public abstract void abstractWriteToParcel(Parcel out, int flags);
+    protected abstract String abstractCompressToString();
+    protected abstract void abstractWriteToParcel(Parcel out, int flags);
     @Override public void writeToParcel(Parcel out, int flags) {
         out.writeSerializable(instance);
         out.writeSerializable(matchDataCalculator);

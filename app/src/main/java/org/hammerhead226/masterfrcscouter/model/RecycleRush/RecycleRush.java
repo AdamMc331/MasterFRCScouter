@@ -8,6 +8,7 @@ import com.adithyasairam.utils.annotations.Exclude;
 import org.hammerhead226.masterfrcscouter.model.Match;
 import org.hammerhead226.masterfrcscouter.model.MatchDataCalculator;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -178,6 +179,51 @@ public class RecycleRush extends Match {
         out.writeInt(totalAllianceScore);
     }
 
+    @Override
+    public String abstractCompressToString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(autonMode);
+        stringBuilder.append("\n");
+        stringBuilder.append(numberOfAcquiredBinsInAuton);
+        stringBuilder.append("\n");
+        stringBuilder.append(numberOfAutonFoulPoints);
+        stringBuilder.append("\n");
+        stringBuilder.append(numAutonCansAttemptedToBurgle);
+        stringBuilder.append("\n");
+        stringBuilder.append(numAutonCansBurgled);
+        stringBuilder.append("\n");
+        stringBuilder.append(canBurglingSpeed);
+        stringBuilder.append("\n");
+        stringBuilder.append(wasACOOPSetScoredInTeleop);
+        stringBuilder.append("\n");
+        stringBuilder.append(wasACOOPStackScoredInTeleop);
+        stringBuilder.append("\n");
+        stringBuilder.append(areStacksDown);
+        stringBuilder.append("\n");
+        stringBuilder.append(robotDidCap);
+        stringBuilder.append("\n");
+        stringBuilder.append(numberOfCaps);
+        stringBuilder.append("\n");
+        stringBuilder.append(numberOfStacksScoredInTeleop);
+        stringBuilder.append("\n");
+        stringBuilder.append(toteSource);
+        stringBuilder.append("\n");
+        stringBuilder.append(stacks);
+        stringBuilder.append("\n");
+        stringBuilder.append(numberOfTeleopFoulPoints);
+        stringBuilder.append("\n");
+        stringBuilder.append(thisRobotsAproxAutonScore);
+        stringBuilder.append("\n");
+        stringBuilder.append(thisRobotsAproxTeleopScore);
+        stringBuilder.append("\n");
+        stringBuilder.append(thisRobotsAproxCOOPScore);
+        stringBuilder.append("\n");
+        stringBuilder.append(thisRobotsAproxTotalScore);
+        stringBuilder.append("\n");
+        stringBuilder.append(totalAllianceScore);
+        return stringBuilder.toString();
+    }
+
     public void putAutonInfo(String mode, int numAcquiredBins, int numFouls) {
         autonMode = mode;
         numberOfAcquiredBinsInAuton = numAcquiredBins;
@@ -199,8 +245,14 @@ public class RecycleRush extends Match {
         numberOfCaps = numCaps;
         toteSource = toteInput;
         numberOfTeleopFoulPoints = numFouls;
-        stacks = stackList;
-        numberOfStacksScoredInTeleop = stackList.size();
+        if (stackList == null) { //handle null!!
+            stacks = new ArrayList<>();
+            numberOfStacksScoredInTeleop = 0;
+        }
+        else {
+            stacks = stackList;
+            numberOfStacksScoredInTeleop = stackList.size();
+        }
     }
     
     public void putScores(int allianceScore) {

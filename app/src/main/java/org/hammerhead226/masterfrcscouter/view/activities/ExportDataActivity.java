@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.common.io.Files;
 
@@ -56,14 +57,20 @@ public class ExportDataActivity extends AppCompatActivity {
     @OnClick(R.id.exportDataButton) public void sendFilesByEmail() {
         try {
             String email = P.email.get();
-            Intent intent = new Intent(Intent.ACTION_SENDTO);
-            intent.setData(Uri.parse("mailto:")); // only email apps should handle this
-            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email}); // recipients
-            for (File f : getFilesToSend()) {
-                intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(f));
+            if (email == null || email.equals("null")) {
+                Toast.makeText(this, "Null Email Recipient. Please Configure it in settings.", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, SettingsActivity.class));
             }
-            intent.putExtra(Intent.EXTRA_SUBJECT, Scouter.scouterName + "'s scouting data");
-            startActivity(intent);
+            else {
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email}); // recipients
+                for (File f : getFilesToSend()) {
+                    intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(f));
+                }
+                intent.putExtra(Intent.EXTRA_SUBJECT, Scouter.scouterName + "'s scouting data");
+                startActivity(intent);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

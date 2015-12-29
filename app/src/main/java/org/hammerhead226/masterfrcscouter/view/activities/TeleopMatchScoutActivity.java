@@ -28,10 +28,8 @@ import butterknife.ButterKnife;
 @Changeable(source = TeleopMatchScoutActivity.class,
         when = Changeable.When.YEARLY, priority = Changeable.Priority.HIGH)
 public class TeleopMatchScoutActivity extends AppCompatActivity implements View.OnClickListener {
-
-
     RecycleRush match;
-    public static ArrayList<RRStack> rrStackArrayList;
+    static ArrayList<RRStack> rrStackArrayList;
     @Bind(R.id.submitStack)
     Button stackSubmit;
     @Bind(R.id.stackHeightET)
@@ -67,7 +65,7 @@ public class TeleopMatchScoutActivity extends AppCompatActivity implements View.
         } catch (Exception e) {
             e.printStackTrace();
         }
-        rrStackArrayList = new ArrayList<RRStack>(5);
+        rrStackArrayList = new ArrayList<>();
         setContentView(R.layout.activity_teleop_match_scout);
         ButterKnife.bind(this);
 
@@ -133,8 +131,7 @@ public class TeleopMatchScoutActivity extends AppCompatActivity implements View.
             boolean didCap = didCapCans.isChecked();
             String toteSource = getToteSource();
             match.putTeleopInfo(cSet, cStack, stackDown, didCap, nCC, toteSource, nTF, rrStackArrayList);
-        } catch (Exception e) {
-        }
+        } catch (Exception e) { e.printStackTrace(); }
     }
 
     public String getToteSource() {
