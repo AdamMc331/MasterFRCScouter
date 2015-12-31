@@ -2,6 +2,10 @@
     <PreferenceCategory
         android:title="@string/pref_header_general"
         android:key="pref_key_general_settings">
+        <CheckBoxPreference
+            android:key="superuser"
+            android:title="@string/superuserText"
+            android:defaultValue="false" />
         <EditTextPreference
         android:key="email"
         android:title="@string/emailText"

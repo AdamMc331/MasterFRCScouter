@@ -17,13 +17,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.hammerhead226.masterfrcscouter.MasterFRCScouterApplication;
 import org.hammerhead226.masterfrcscouter.android.R;
 import org.hammerhead226.masterfrcscouter.backend.Constants;
 import org.hammerhead226.masterfrcscouter.backend.Scouter;
 
-import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.Bind;
@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
     public static Scouter instance;
 
     protected MasterFRCScouterApplication app;
-
-    public static File csvFile;
 
     Button matchScout, pitScout, info, TBABtn, exportData, logOut;
     @Bind(R.id.navList)
@@ -54,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         instance = new Scouter();
         app = (MasterFRCScouterApplication) getApplication();
-        csvFile = new File(Constants.getMatchDataDir(), "Matches.csv");
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
@@ -68,13 +65,13 @@ public class MainActivity extends AppCompatActivity {
         addDrawerItems();
         setupDrawer();
 
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#424242")));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#212121")));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
     }
 
     private void addDrawerItems() {
-        String[] osArray = {"Match Scout", "Pit Scout", "About", "The Blue Alliance", "Export Data", "Settings", "Log Out"};
+        String[] osArray = {"Match Scout", "Pit Scout", "About", "The Blue Alliance", "Export Data", "Settings", "Superuser", "Log Out"};
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
         mDrawerList.setAdapter(mAdapter);
 
@@ -101,6 +98,13 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this, SettingsActivity.class));
                         break;
                     case 6:
+                        if (Constants.SUPERUSER) {
+                            startActivity(new Intent(MainActivity.this, SuperuserActivity.class));
+                            break;
+                        }
+                        Toast.makeText(MainActivity.this, "Sorry, but you do not have permission to complete this task.", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 7:
                         instance.endSession();
                         Log.i(TAG, "Scouting session ended at: " + instance.sessionEndTime + ".");
                         Log.i(TAG, "Scouting session lasted: " + Math.abs(TimeUnit.MILLISECONDS.toMinutes(instance.getTotalTimeScouted())) + " minutes.");

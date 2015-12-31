@@ -5,6 +5,7 @@
 
     <!-- Example General settings -->
     <string name="pref_header_general">General</string>
+    <string name="superuserText">Super User</string>
     <string name="emailText">Email</string>
     <string name="numberText">Phone Number</string>
     <string name="eventToScoutText">Event to Scout</string>

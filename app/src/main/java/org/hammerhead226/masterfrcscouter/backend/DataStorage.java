@@ -6,9 +6,9 @@ import android.widget.Toast;
 
 import com.adithyasairam.utils.ezio.csv.CSVWriter;
 
+import org.hammerhead226.masterfrcscouter.MasterFRCScouterApplication;
 import org.hammerhead226.masterfrcscouter.android.P;
 import org.hammerhead226.masterfrcscouter.model.Match;
-import org.hammerhead226.masterfrcscouter.view.activities.MainActivity;
 
 /**
  * Created by Adi on 8/30/2015.
@@ -28,19 +28,14 @@ public class DataStorage {
     }
 
     public static void saveMatchAsCSV(Match match) {
-        CSVWriter csvWriter = new CSVWriter(MainActivity.csvFile);
-        if (MainActivity.csvFile.length() < 1) {
+        CSVWriter csvWriter = new CSVWriter(MasterFRCScouterApplication.getCSVFile());
+        if (MasterFRCScouterApplication.getCSVFile().length() <= 1) {
             csvWriter.writeArray(match.getMatchDataCalculator().getHeaders());
         }
         csvWriter.writeArray(match.getMatchDataCalculator().getData());
         csvWriter.closeStream();
-        DataRW.addMapEntry("csvFile", MainActivity.csvFile);
+        DataRW.addMapEntry("CsvFile", MasterFRCScouterApplication.getCSVFile());
     }
 
-    public static void sendMessageAsSMS(Match match, String number) {
-        SmsManager smsManager = SmsManager.getDefault();
-        String data = match.compressToString();
-        if (data.length() > 140) { smsManager.sendMultipartTextMessage(number, null, smsManager.divideMessage(data), null, null); }
-        else { smsManager.sendTextMessage(number, null, data, null, null); }
-    }
+    public static void sendMessageAsSMS(Match match, String number) { SmsManager.getDefault().sendTextMessage(number, null, match.compressToString(), null, null); }
 }

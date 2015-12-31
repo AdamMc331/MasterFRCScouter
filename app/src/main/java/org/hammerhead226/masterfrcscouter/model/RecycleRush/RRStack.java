@@ -9,8 +9,8 @@ public class RRStack implements Comparable<RRStack>, Serializable {
     private static final long serialVersionUID = 201510242305L; /* Date Stamp: 2015-10-24 - 23:05 */
 
     public int height;
-    public boolean canOnTop;
     public boolean canOnTopWithLitter;
+    public boolean canOnTop;
 
     public RRStack(int h, boolean cOTWL, boolean cOT) {
         height = h;
@@ -27,21 +27,11 @@ public class RRStack implements Comparable<RRStack>, Serializable {
     }
 
     public String toString() {
-        boolean multiline = false;
-        String s = "{ ";
-        if (multiline) {
-            s += " Height: " + height + "\n";
-            s += " Has a Can on Top with Litter: " + canOnTopWithLitter + "\n";
-            s += " Has a Can on Top: " + canOnTop + "\n";
-            s += " Score: " + calculateStackScore() + "\n";
-            s += "}";
-        } else {
-            s += " Height: " + height;
-            s += " Has a Can on Top with Litter: " + canOnTopWithLitter;
-            s += " Has a Can on Top: " + canOnTop;
-            s += " Score: " + calculateStackScore();
-            s += "}";
-        }
+        String s = "";
+        s += height + "-";
+        s += canOnTopWithLitter + "-";
+        s += canOnTop;
+        s += ";";
         return s;
     }
 

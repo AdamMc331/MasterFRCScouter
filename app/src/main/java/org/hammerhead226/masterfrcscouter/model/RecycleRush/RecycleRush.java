@@ -51,6 +51,51 @@ public class RecycleRush extends Match {
     public RecycleRush(int mN, int tN) {
         super(mN, tN);
     }
+    
+    public RecycleRush(String[] data) {
+        super(data);
+        autonMode = data[6];
+        numberOfAcquiredBinsInAuton = Integer.parseInt(data[7]);
+        numberOfAutonFoulPoints = Integer.parseInt(data[8]);
+        numAutonCansAttemptedToBurgle = Integer.parseInt(data[9]);
+        numAutonCansBurgled = Integer.parseInt(data[10]);
+        canBurglingSpeed = Double.parseDouble(data[11]);
+        wasACOOPSetScoredInTeleop = Boolean.getBoolean(data[12]);
+        wasACOOPStackScoredInTeleop = Boolean.getBoolean(data[13]);
+        areStacksDown = Boolean.getBoolean(data[14]);
+        robotDidCap = Boolean.getBoolean(data[15]);
+        numberOfCaps = Integer.parseInt(data[16]);
+        numberOfStacksScoredInTeleop = Integer.parseInt(data[17]);
+        toteSource = data[18];
+        stacks = new ArrayList<>();
+        String[] split = data[19].split(";");
+        for (int i = 0; i < split.length; i++) {
+            String string = split[i];
+            if (i == 0) {
+                int h = Integer.parseInt(string.substring(1, 2));
+                boolean cOTWL = Boolean.getBoolean(string.substring(3, 4));
+                boolean cOT = Boolean.getBoolean(string.substring(5, 6));
+                stacks.add(new RRStack(h, cOTWL, cOT));
+            }
+            if (i == 1) {
+                int h = Integer.parseInt(string.substring(2, 3));
+                boolean cOTWL = Boolean.getBoolean(string.substring(3, 4));
+                boolean cOT = Boolean.getBoolean(string.substring(5, 6));
+                stacks.add(new RRStack(h, cOTWL, cOT));
+            }
+            else {
+                //Abort
+            }
+        }
+        numberOfTeleopFoulPoints = Integer.parseInt(data[20]);
+        thisRobotsAproxAutonScore = Integer.parseInt(data[21]);
+        thisRobotsAproxTeleopScore = Integer.parseInt(data[22]);
+        thisRobotsAproxCOOPScore = Integer.parseInt(data[23]);
+        thisRobotsAproxTotalScore = Integer.parseInt(data[24]);
+        totalAllianceScore = Integer.parseInt(data[25]);
+        robotWasPoorlyDriven = Boolean.getBoolean(data[26]);
+        comments = data[27];
+    }
 
     protected RecycleRush(Parcel in) {
         super(in);
@@ -221,6 +266,8 @@ public class RecycleRush extends Match {
         stringBuilder.append(thisRobotsAproxTotalScore);
         stringBuilder.append("\n");
         stringBuilder.append(totalAllianceScore);
+        stringBuilder.append("\n");
+        stringBuilder.append(comments);
         return stringBuilder.toString();
     }
 
@@ -247,12 +294,11 @@ public class RecycleRush extends Match {
         numberOfTeleopFoulPoints = numFouls;
         if (stackList == null) { //handle null!!
             stacks = new ArrayList<>();
-            numberOfStacksScoredInTeleop = 0;
         }
         else {
             stacks = stackList;
-            numberOfStacksScoredInTeleop = stackList.size();
         }
+        numberOfStacksScoredInTeleop = stacks.size();
     }
     
     public void putScores(int allianceScore) {

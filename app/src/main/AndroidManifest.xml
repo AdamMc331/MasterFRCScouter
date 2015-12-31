@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.hammerhead226.masterfrcscouter.android" >
+    package="org.hammerhead226.masterfrcscouter.android">
 
     <uses-sdk
         android:minSdkVersion="19"
@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
@@ -19,17 +20,17 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="1ed35bd312c41111e97ba68eb810d5f712e60535" />
         <meta-data
             android:name="com.bugsnag.android.API_KEY"
-            android:value="adcd8a0b056037f960ced2e5c5c2674e"/>
+            android:value="adcd8a0b056037f960ced2e5c5c2674e" />
 
         <activity
             android:name="org.hammerhead226.masterfrcscouter.view.activities.LoginActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,36 +39,28 @@
         </activity>
         <activity
             android:name="org.hammerhead226.masterfrcscouter.view.activities.MainActivity"
-            android:label="@string/app_name" >
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name="org.hammerhead226.masterfrcscouter.view.activities.MatchScoutActivity"
-            android:label="@string/title_activity_match_scout" >
-        </activity>
+            android:label="@string/title_activity_match_scout"></activity>
         <activity
             android:name="org.hammerhead226.masterfrcscouter.view.activities.PitScoutActivity"
-            android:label="@string/title_activity_pit_scout" >
-        </activity>
+            android:label="@string/title_activity_pit_scout"></activity>
         <activity
             android:name="org.hammerhead226.masterfrcscouter.view.activities.InfoActivity"
-            android:label="@string/title_activity_info" >
-        </activity>
+            android:label="@string/title_activity_info"></activity>
         <activity
             android:name="org.hammerhead226.masterfrcscouter.view.activities.TheBlueAllianceActivity"
-            android:label="@string/title_activity_the_blue_alliance" >
-        </activity>
+            android:label="@string/title_activity_the_blue_alliance"></activity>
         <activity
             android:name="org.hammerhead226.masterfrcscouter.view.activities.ExportDataActivity"
-            android:label="@string/title_activity_export_data" >
-        </activity>
+            android:label="@string/title_activity_export_data"></activity>
         <activity
             android:name="org.hammerhead226.masterfrcscouter.view.activities.SettingsActivity"
-            android:label="@string/title_activity_settings" >
-        </activity>
+            android:label="@string/title_activity_settings"></activity>
         <activity
             android:name="org.hammerhead226.masterfrcscouter.view.activities.TeleopMatchScoutActivity"
-            android:label="@string/title_activity_teleop_match_scout" >
-        </activity>
+            android:label="@string/title_activity_teleop_match_scout"></activity>
         <activity
             android:name="org.hammerhead226.masterfrcscouter.view.activities.AutonMatchScoutActivity"
             android:label="@string/title_activity_auton_match_scout" />
@@ -76,12 +69,12 @@
             android:label="@string/title_activity_can_burgeled_auton" />
         <activity
             android:name="org.hammerhead226.masterfrcscouter.view.activities.MatchScoutSubmitActivity"
-            android:label="@string/title_activity_match_scout_submit" >
-        </activity>
+            android:label="@string/title_activity_match_scout_submit"></activity>
+        <activity
+            android:name="org.hammerhead226.masterfrcscouter.view.activities.SuperuserActivity"
+            android:label="@string/title_activity_superuser"></activity>
         <activity
             android:name="org.hammerhead226.masterfrcscouter.view.activities.UIElements.SideMenu"
-            android:label="@string/title_activity_side_menu" >
-        </activity>
+            android:label="@string/title_activity_side_menu"></activity>
     </application>
-
 </manifest>

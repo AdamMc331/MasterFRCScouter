@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.google.common.io.Files;
 
+import org.hammerhead226.masterfrcscouter.MasterFRCScouterApplication;
 import org.hammerhead226.masterfrcscouter.android.P;
 import org.hammerhead226.masterfrcscouter.android.R;
 import org.hammerhead226.masterfrcscouter.backend.Constants;
@@ -80,9 +81,9 @@ public class ExportDataActivity extends AppCompatActivity {
         try {
             long millis = System.currentTimeMillis();
             File backupFile = new File(Constants.getMatchDataBackupDir(), "Matches-" + millis + ".csv");
-            Files.move(MainActivity.csvFile, backupFile);
-            MainActivity.csvFile.delete(); //Delete old CSV file
-            MainActivity.csvFile = new File(Constants.getMatchDataDir(), "Matches.csv"); //Init new CSV file
+            Files.move(MasterFRCScouterApplication.getCSVFile(), backupFile);
+            MasterFRCScouterApplication.getCSVFile().delete(); //Delete old CSV file
+            MasterFRCScouterApplication.setCSVFile(new File(Constants.getMatchDataDir(), "Matches.csv")); //Init new CSV file
         } catch (Exception e) {
             e.printStackTrace();
         }

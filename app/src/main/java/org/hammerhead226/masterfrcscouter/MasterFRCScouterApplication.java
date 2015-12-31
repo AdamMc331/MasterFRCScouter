@@ -6,11 +6,14 @@ import android.support.multidex.MultiDexApplication;
 import com.bugsnag.android.Bugsnag;
 import com.crashlytics.android.Crashlytics;
 import com.digits.sdk.android.Digits;
+import com.squareup.leakcanary.LeakCanary;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterCore;
 
 import org.hammerhead226.masterfrcscouter.android.P;
 import org.hammerhead226.masterfrcscouter.backend.Constants;
+
+import java.io.File;
 
 import io.fabric.sdk.android.Fabric;
 import io.smooch.core.Smooch;
@@ -21,15 +24,18 @@ import io.smooch.core.Smooch;
  */
 public class MasterFRCScouterApplication extends MultiDexApplication { //Extends MultiDexApplication to allow for Multi Dex Support
     private static MasterFRCScouterApplication instance;
+    private static File csvFile;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        instance = this;
         P.init(this);
         initFabric();
         initBugsnag();
         initSmooch();
+        initLeakcanary();
+        instance = this;
+        csvFile = new File(Constants.getMatchDataDir(), "Matches.csv");
     }
 
     private void initFabric() {
@@ -40,6 +46,12 @@ public class MasterFRCScouterApplication extends MultiDexApplication { //Extends
     private void initBugsnag() { Bugsnag.init(this); }
 
     private void initSmooch() { Smooch.init(this, Constants.SMOOCH_KEY); }
+
+    private void initLeakcanary() { LeakCanary.install(this); }
+
+    public static File getCSVFile() { return csvFile; }
+
+    public static void setCSVFile(File file) { csvFile = file; }
 
     public static MasterFRCScouterApplication getInstance() { return instance; }
 
