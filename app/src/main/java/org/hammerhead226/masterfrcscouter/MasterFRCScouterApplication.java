@@ -6,11 +6,13 @@ import android.support.multidex.MultiDexApplication;
 import com.bugsnag.android.Bugsnag;
 import com.crashlytics.android.Crashlytics;
 import com.digits.sdk.android.Digits;
+import com.optimizely.Optimizely;
 import com.squareup.leakcanary.LeakCanary;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterCore;
 
 import org.hammerhead226.masterfrcscouter.android.P;
+import org.hammerhead226.masterfrcscouter.android.R;
 import org.hammerhead226.masterfrcscouter.backend.Constants;
 
 import java.io.File;
@@ -31,6 +33,7 @@ public class MasterFRCScouterApplication extends MultiDexApplication { //Extends
         super.onCreate();
         P.init(this);
         initFabric();
+        initOptimizely();
         initBugsnag();
         initSmooch();
         initLeakcanary();
@@ -41,6 +44,11 @@ public class MasterFRCScouterApplication extends MultiDexApplication { //Extends
     private void initFabric() {
         TwitterAuthConfig authConfig = new TwitterAuthConfig(Constants.TWITTER_KEY, Constants.TWITTER_SECRET);
         Fabric.with(this, new Crashlytics(), new TwitterCore(authConfig), new Digits());
+    }
+
+    private void initOptimizely() {
+        Optimizely.startOptimizelyWithAPIToken(
+                getString(R.string.com_optimizely_api_key), this);
     }
 
     private void initBugsnag() { Bugsnag.init(this); }

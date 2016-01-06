@@ -17,9 +17,9 @@ public final class Constants {
     public static final String TWITTER_SECRET = "Ze9BvF5OBjgsAcMo7hUnmPwHRdu3Uni5Mw2ZGVnbfbf3Uy0cGE"; //Twitter API Secret
     public static final String SMOOCH_KEY = "8o14mwv1miubio0e3zgx2o7qd"; //Smooch API Key
     public static final String MATCH_KEY = "org.hammerhead226.masterfrcscouter.android.MATCH"; //Key for Intent Data transfer
-    public static final String MATCH_HEADER = "Match-HEAD"; //Header used for sending Match over SMS
-    public static final String MATCH_FOOTER = "Match-FOOT"; //Footer used for sending Match over SMS
-    public static String GoogleFormsURL = "http://www.google.com"; //Put Google Forms URL here for Pit scouting
+    public static final String MATCH_HEADER = "Match-HEAD"; //Header used for sending Matches
+    public static final String MATCH_FOOTER = "Match-FOOT"; //Footer used for sending Matches
+    public static String GoogleFormsURL = "http://www.google.com"; //Google Forms URL for Pit scouting [Placeholder]
 
     public static File getAppDir() {
         RealStoragePathLibrary storagePathLibrary = new RealStoragePathLibrary(MasterFRCScouterApplication.getStaticApplicationContext());

@@ -84,4 +84,5 @@
     <string name="action_example">Example action</string>
     <string name="title_activity_superuser">Superuser</string>
     <string name="import_from_texts">Import from Texts</string>
+    <string name="com.optimizely.api_key" translatable="false">AANKj6cBU0ymQKRdmaMP1sWZ2sj_ZXNy~4410086215</string>
 </resources>
