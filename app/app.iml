@@ -132,6 +132,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.optimizely/optimizely-core/1.3.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.optimizely/optimizely/1.3.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.optimizely/universalanalyticsintegration/1.2.1/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.readystatesoftware.ghostlog/ghostlog-integration/1.0.3/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.squareup.leakcanary/leakcanary-android/1.3.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.4.0/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/io.fabric.sdk.android/fabric/1.3.10/jars" />
@@ -177,6 +178,7 @@
     <orderEntry type="library" exported="" name="leakcanary-watcher-1.3.1" level="project" />
     <orderEntry type="library" exported="" name="twitter-core-1.4.0" level="project" />
     <orderEntry type="library" exported="" name="answers-1.3.6" level="project" />
+    <orderEntry type="library" exported="" name="ghostlog-integration-1.0.3" level="project" />
     <orderEntry type="library" exported="" name="ui-2.0.7" level="project" />
     <orderEntry type="library" exported="" name="play-services-panorama-8.4.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-appindexing-8.4.0" level="project" />

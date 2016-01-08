@@ -65,9 +65,6 @@
             android:name="org.hammerhead226.masterfrcscouter.view.activities.AutonMatchScoutActivity"
             android:label="@string/title_activity_auton_match_scout" />
         <activity
-            android:name="org.hammerhead226.masterfrcscouter.view.activities.CanBurgeledAutonActivity"
-            android:label="@string/title_activity_can_burgeled_auton" />
-        <activity
             android:name="org.hammerhead226.masterfrcscouter.view.activities.MatchScoutSubmitActivity"
             android:label="@string/title_activity_match_scout_submit"></activity>
         <activity

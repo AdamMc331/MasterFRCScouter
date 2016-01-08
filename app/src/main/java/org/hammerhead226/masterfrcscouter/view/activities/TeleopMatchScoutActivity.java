@@ -10,26 +10,23 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Switch;
-import android.widget.Toast;
 
 import com.adithyasairam.android.android_commons.Intents;
 import com.adithyasairam.utils.annotations.Changeable;
 
 import org.hammerhead226.masterfrcscouter.android.R;
 import org.hammerhead226.masterfrcscouter.backend.Constants;
-import org.hammerhead226.masterfrcscouter.model.RecycleRush.RRStack;
-import org.hammerhead226.masterfrcscouter.model.RecycleRush.RecycleRush;
-
-import java.util.ArrayList;
+import org.hammerhead226.masterfrcscouter.model.Match;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+;
+
 @Changeable(source = TeleopMatchScoutActivity.class,
         when = Changeable.When.YEARLY, priority = Changeable.Priority.HIGH)
 public class TeleopMatchScoutActivity extends AppCompatActivity implements View.OnClickListener {
-    RecycleRush match;
-    static ArrayList<RRStack> rrStackArrayList;
+    /*Type*/ Match match;
     @Bind(R.id.submitStack)
     Button stackSubmit;
     @Bind(R.id.stackHeightET)
@@ -65,12 +62,9 @@ public class TeleopMatchScoutActivity extends AppCompatActivity implements View.
         } catch (Exception e) {
             e.printStackTrace();
         }
-        rrStackArrayList = new ArrayList<>();
         setContentView(R.layout.activity_teleop_match_scout);
         ButterKnife.bind(this);
-
         stackSubmit.setOnClickListener(this);
-
         nextButton.setOnClickListener(this);
     }
 
@@ -93,23 +87,6 @@ public class TeleopMatchScoutActivity extends AppCompatActivity implements View.
 
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.submitStack:
-                try {
-                    int sH = Integer.parseInt(stackHeight.getText().toString());
-                    boolean cOTWL = canOnTopWithLitter.isChecked();
-                    boolean cOT = canOnTop.isChecked();
-                    if (cOTWL && cOT) {
-                        Toast.makeText(getApplicationContext(), "You have checked that the Stack has both a Can on Top and a Can on Top with Litter", Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-                    rrStackArrayList.add(new RRStack(sH, cOTWL, cOT));
-                    stackHeight.setText("");
-                    canOnTopWithLitter.setChecked(false);
-                    canOnTop.setChecked(false);
-                    break;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
             case R.id.nextBttn:
                 try {
                     parseData();
@@ -123,27 +100,7 @@ public class TeleopMatchScoutActivity extends AppCompatActivity implements View.
 
     private void parseData() {
         try {
-            int nTF = Integer.parseInt(numTeleFouls.getText().toString());
-            int nCC = Integer.parseInt(numCansCapped.getText().toString());
-            boolean cSet = coopSet.isChecked();
-            boolean cStack = coopStack.isChecked();
-            boolean stackDown = knockedOverStacks.isChecked();
-            boolean didCap = didCapCans.isChecked();
-            String toteSource = getToteSource();
-            match.putTeleopInfo(cSet, cStack, stackDown, didCap, nCC, toteSource, nTF, rrStackArrayList);
-        } catch (Exception e) { e.printStackTrace(); }
-    }
 
-    public String getToteSource() {
-        String source = "";
-        boolean HF = totesFromHF.isChecked();
-        boolean LF = totesFromLF.isChecked();
-        if (HF) {
-            return "Human Feeder";
-        } else if (LF) {
-            return "Land Fill";
-        } else {
-            return "Both";
-        }
+        } catch (Exception e) { e.printStackTrace(); }
     }
 }

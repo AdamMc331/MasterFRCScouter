@@ -7,9 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Switch;
-import android.widget.TextView;
 
 import com.adithyasairam.android.android_commons.Intents;
 import com.adithyasairam.utils.annotations.Changeable;
@@ -17,7 +14,7 @@ import com.adithyasairam.utils.annotations.Changeable;
 import org.hammerhead226.masterfrcscouter.android.R;
 import org.hammerhead226.masterfrcscouter.backend.Constants;
 import org.hammerhead226.masterfrcscouter.backend.DataStorage;
-import org.hammerhead226.masterfrcscouter.model.RecycleRush.RecycleRush;
+import org.hammerhead226.masterfrcscouter.model.Match;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -26,16 +23,8 @@ import butterknife.ButterKnife;
         when = Changeable.When.YEARLY, priority = Changeable.Priority.HIGH)
 public class MatchScoutSubmitActivity extends AppCompatActivity implements View.OnClickListener {
 
-    RecycleRush match;
-
-    @Bind(R.id.badDrivingSwitch)
-    Switch poorlyDrivenRobot;
-    @Bind(R.id.allianceSelectionET)
-    EditText allianceScore;
-    @Bind(R.id.commentsTextArea)
-    TextView comments;
-    @Bind(R.id.nextBttn)
-    Button submit;
+    /*Type*/ Match match;
+    @Bind(R.id.nextBttn) Button submit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,13 +74,7 @@ public class MatchScoutSubmitActivity extends AppCompatActivity implements View.
 
     private void parseData() {
         try {
-            String commentsText = comments.getText().toString();
-            int aScore = Integer.parseInt(allianceScore.getText().toString());
-            boolean badDriving = poorlyDrivenRobot.isChecked();
-            match.putExtras(commentsText, badDriving);
-            match.putScores(aScore);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
+        } catch (Exception e) { e.printStackTrace(); }
     }
 }

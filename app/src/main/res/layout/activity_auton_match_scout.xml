@@ -12,33 +12,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/autonItems"
         android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/acquiredStepBins"
         android:layout_above="@+id/autonSelectionTV" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="8"
-        android:id="@+id/acquiredStepBins"
-        android:hint="@string/acquiredStepBinsText"
-        android:enabled="true"
-        android:layout_alignTop="@+id/autonItems"
-        android:layout_alignParentEnd="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="5"
-        android:id="@+id/numAutoFouls"
-        android:hint="@string/numAutoFoulsText"
-        android:enabled="true"
-        android:editable="false"
-        android:clickable="false"
-        android:layout_marginTop="48dp"
-        android:layout_below="@+id/acquiredStepBins"
-        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"

@@ -18,7 +18,7 @@ import com.adithyasairam.utils.annotations.Changeable;
 
 import org.hammerhead226.masterfrcscouter.android.R;
 import org.hammerhead226.masterfrcscouter.backend.Constants;
-import org.hammerhead226.masterfrcscouter.model.RecycleRush.RecycleRush;
+import org.hammerhead226.masterfrcscouter.model.Match;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,10 +33,9 @@ public class AutonMatchScoutActivity extends AppCompatActivity implements Adapte
     String autonSelection = "";
     CharSequence origText = null;
 
-    RecycleRush match;
+    /*Type*/ Match match;
 
     @Bind(R.id.autonItems) ListView autonListView;
-    @Bind(R.id.acquiredStepBins) EditText acquiredStepBins;
     @Bind(R.id.numAutoFouls) EditText autoFouls;
     @Bind(R.id.goToTeleop) Button goToTeleop;
     @Bind(R.id.autonSelectionTV) TextView autonSelectionTV;
@@ -52,8 +51,7 @@ public class AutonMatchScoutActivity extends AppCompatActivity implements Adapte
         setContentView(R.layout.activity_auton_match_scout);
         ButterKnife.bind(this);
         autonListView = (ListView) findViewById(R.id.autonItems);
-        final List<String> values = Arrays.asList("Drove to Auto Zone",
-                "Set Scored", "Tote Set Scored", "Stacked Tote Set Scored", "Bin Set", "Can Burgled", "Did Nothing");
+        final List<String> values = Arrays.asList("Did Nothing");
         final ArrayAdapter adapter = new ArrayAdapter(this,
                 android.R.layout.simple_list_item_1, values);
         autonListView.setAdapter(adapter);
@@ -80,16 +78,15 @@ public class AutonMatchScoutActivity extends AppCompatActivity implements Adapte
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-        String[] values = new String[]{"Drove to Auto Zone",
-                               "Set Scored", "Tote Set Scored", "Stacked Tote Set Scored", "Bin Set", "Can Burgled", "Did Nothing"};
+        String[] values = new String[]{"Did Nothing"};
         autonSelection = values[position]; //Shady
         updateAutonTVText();
         if (Arrays.asList(values).indexOf(autonSelection) == 1) {
             ///WTF this should never happen
         }
-        if (autonSelection.equals("Can Burgled")) {
+        if (autonSelection.equals("")) {
             setBlank();
-            Intent intent = new Intents.IntentBuilder().toClass(CanBurgeledAutonActivity.class).withContext(this).withSerializable(Constants.MATCH_KEY, match).build();
+            Intent intent = new Intents.IntentBuilder().toClass(null).withContext(this).withSerializable(Constants.MATCH_KEY, match).build();
             startActivityForResult(intent, RESULT_OK);
         }
         if (autonSelection.equals("Did Nothing")) {
@@ -98,33 +95,14 @@ public class AutonMatchScoutActivity extends AppCompatActivity implements Adapte
         parseData();
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == RESULT_OK) {
-            try {
-                match = Intents.IntentProperties.getSerializable(Constants.MATCH_KEY, data);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
     @OnClick(R.id.goToTeleop) public void goToTeleop() {
         startActivity(new Intents.IntentBuilder().toClass(TeleopMatchScoutActivity.class).withContext(this).withSerializable(Constants.MATCH_KEY, match).build());
     }
 
     private void parseData() {
         try {
-            int aB = Integer.parseInt(acquiredStepBins.getText().toString());
-            int aF = Integer.parseInt(autoFouls.getText().toString());
-            match.putAutonInfo(autonSelection, aB, aF);
-        } catch (Exception e) {
-        }
+
+        } catch (Exception e) { e.printStackTrace(); }
     }
 
     private void updateAutonTVText() {
@@ -132,7 +110,6 @@ public class AutonMatchScoutActivity extends AppCompatActivity implements Adapte
     }
 
     private void setBlank() {
-        acquiredStepBins.setText("0");
         autoFouls.setText("0");
     }
 }

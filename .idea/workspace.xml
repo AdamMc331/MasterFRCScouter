@@ -9,44 +9,22 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d610aabe-c72c-4128-bec4-fe88b2ec985a" name="Default" comment="Add a way to optionally send a match over text.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/amplitudeintegration_1_2_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/fabric_1_3_10.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/localyticsintegration_1_2_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mixpanelintegration_1_2_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/okhttp_2_3_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/okio_1_3_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/optimizely_core_1_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/universalanalyticsintegration_1_2_1.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_2_4.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/answers_1_3_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/answers_1_3_6.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/beta_1_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/beta_1_1_4.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/crashlytics_2_5_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/crashlytics_2_5_5.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/crashlytics_core_2_3_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/crashlytics_core_2_3_8.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/fabric_1_3_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/optimizely_1_3_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/backend/Constants.java" afterPath="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/backend/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/MasterFRCScouterApplication.java" afterPath="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/MasterFRCScouterApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/android_commons_1_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/android_commons_1_0_0.xml" />
+    <list default="true" id="d610aabe-c72c-4128-bec4-fe88b2ec985a" name="Default" comment="Updates">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/Stronghold/Stronghold.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/Stronghold/StrongholdDataCalculator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/ghostlog_integration_1_0_3.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/CanBurgeledAutonActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_can_burgeled_auton.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/AutonMatchScoutActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/AutonMatchScoutActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/MatchScoutSubmitActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/MatchScoutSubmitActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/TeleopMatchScoutActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/TeleopMatchScoutActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_auton_match_scout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_auton_match_scout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_match_scout_submit.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_match_scout_submit.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_teleop_match_scout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_teleop_match_scout.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_1_1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/core_2_0_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/core_2_0_7.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/mediarouter_v7_23_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/mediarouter_v7_23_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/multidex_1_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/multidex_1_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_base_8_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_base_8_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_games_8_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_games_8_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_gcm_8_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_gcm_8_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_identity_8_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_identity_8_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_measurement_8_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_measurement_8_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_nearby_8_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_nearby_8_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_panorama_8_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_panorama_8_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_safetynet_8_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_safetynet_8_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_23_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_23_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_23_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_23_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/ui_2_0_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/ui_2_0_7.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MasterFRCScouter.iws" />
@@ -1462,9 +1440,19 @@
                 <option name="name" value="prepareComOptimizelyUniversalanalyticsintegration121Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare com.readystatesoftware.ghostlog:ghostlog-integration:1.0.3" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComReadystatesoftwareGhostlogGhostlogIntegration103Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Prepare com.squareup.leakcanary:leakcanary-android:1.3.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="prepareComSquareupLeakcanaryLeakcanaryAndroid131Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.squareup.leakcanary:leakcanary-android-no-op:1.3.1" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComSquareupLeakcanaryLeakcanaryAndroidNoOp131Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.twitter.sdk.android:twitter-core:1.4.0" />
@@ -3270,9 +3258,19 @@
                 <option name="name" value="prepareComOptimizelyUniversalanalyticsintegration121Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare com.readystatesoftware.ghostlog:ghostlog-integration:1.0.3" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComReadystatesoftwareGhostlogGhostlogIntegration103Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Prepare com.squareup.leakcanary:leakcanary-android:1.3.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="prepareComSquareupLeakcanaryLeakcanaryAndroid131Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.squareup.leakcanary:leakcanary-android-no-op:1.3.1" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComSquareupLeakcanaryLeakcanaryAndroidNoOp131Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.twitter.sdk.android:twitter-core:1.4.0" />
@@ -3813,7 +3811,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4354860038000" />
+        <entry key="$PROJECT_DIR$" value="4355399453000" />
         <entry key="C:\Users\Adi\Desktop\MasterFRCScouter" value="4349471866669" />
         <entry key="D:\Code\MasterFRCScouter" value="4330225055220" />
       </map>
@@ -4174,8 +4172,6 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.smooch/ui/2.0.7/c7ea10adda8b0175c746b3e72a58a045b96624ab/ui-2.0.7.aar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.everything/providers-android/1.0.1/d4821295529045ff1776293f8f17786f92da9bab/providers-android-1.0.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.everything/providers-android/1.0.1/540d78d87f36aaeaf1050f38e3f190b4e94b015d/providers-android-1.0.1.aar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-android/1.3.1/bfce6225a7f7b9df2e9955454b71613027fa64b1/leakcanary-android-1.3.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-android/1.3.1/9d248f512a3de5edad67d0c473ddb00d3d21ef40/leakcanary-android-1.3.1.aar" />
                             <option value="$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/multidex/1.0.1/multidex-1.0.1.aar" />
                             <option value="$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/appcompat-v7/23.1.1/appcompat-v7-23.1.1.aar" />
                             <option value="$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/23.1.1/support-v4-23.1.1.aar" />
@@ -4188,8 +4184,6 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.optimizely/optimizely/1.3.1/e89294b3ccab6b22629f9b29b50e46447c69eb51/optimizely-1.3.1.aar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.everything/providers-core/1.0.0/200f3ad2e0c75c4916f4ebd9c61e5e1eabfd34a6/providers-core-1.0.0-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.everything/providers-core/1.0.0/3e7f27b411be242537e1c57d89d917027c437a81/providers-core-1.0.0.aar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-analyzer/1.3.1/b7f6478d98b52a8b1004f4cbe2b8a4087ca85c1d/leakcanary-analyzer-1.3.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-analyzer/1.3.1/325e7401a7ea16918eb39ba8baad8fd5561a55d3/leakcanary-analyzer-1.3.1.jar" />
                             <option value="$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar" />
                             <option value="$USER_HOME$/Library/Android/sdk/extras/google/m2repository/com/google/android/gms/play-services-analytics/8.4.0/play-services-analytics-8.4.0.aar" />
                             <option value="$USER_HOME$/Library/Android/sdk/extras/google/m2repository/com/google/android/gms/play-services-appindexing/8.4.0/play-services-appindexing-8.4.0.aar" />
@@ -4222,10 +4216,6 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.optimizely/localyticsintegration/1.2.0/f20709c90a6c9e779160c9089045079a7cb6aca3/localyticsintegration-1.2.0.aar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.optimizely/amplitudeintegration/1.2.3/fb626e05fa0a6df66687cfaefdddd16deed6ba5d/amplitudeintegration-1.2.3.aar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.optimizely/universalanalyticsintegration/1.2.1/4076f13d29d5765981ac5b699e3d90c00e2d0411/universalanalyticsintegration-1.2.1.aar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.haha/haha/1.3/3c181a12e86f2392877dd39a94205fc21b66f40c/haha-1.3-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.haha/haha/1.3/d2c832f9d14a11c79f58a7ee2e10526a12152c72/haha-1.3.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-watcher/1.3.1/86138133c37e1b9af9d9975f09583bd911e331e7/leakcanary-watcher-1.3.1-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-watcher/1.3.1/6904771474c058abfc5912c13d12b02754712165/leakcanary-watcher-1.3.1.jar" />
                             <option value="$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/mediarouter-v7/23.0.0/mediarouter-v7-23.0.0.aar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.6.1/46efda43e1daeb7a4b89a774d509a68b8c99a94d/retrofit-1.6.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.6.1/efb0a36546aa8857ab8df358b106c1817e03cbee/retrofit-1.6.1.jar" />
@@ -4547,8 +4537,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/androidcommons/src/main/java/Intents.java" />
-        <option value="$PROJECT_DIR$/androidcommons/src/main/java/com/adithyasairam/android/androidcommons/Utils/Intents.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/Activities/CanBurgeledAutonActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/Activities/MatchScoutActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/Activities/TeleopMatchScoutActivity.java" />
@@ -4569,21 +4557,18 @@
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/RecycleRush/RecycleRushComputator.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/CanBurgeledAutonActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/MatchScoutActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/MatchScoutSubmitActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/TheBlueAllianceActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/backend/TBA/TBARequest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/RecycleRush/RecycleRushCalculator.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/RecycleRush/RecycleRushDataCalculator.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/backend/DataRW.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/backend/internal/ChangeableProcessing.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/AutonMatchScoutActivity.java" />
         <option value="$USER_HOME$/AppData/Local/Android/sdk/platforms/android-23/android.jar!/dalvik/system/BaseDexClassLoader.class" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/AbstractMatchDataCalculator.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/MatchDataCalculator.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/backend/APIKeys.java" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/TeleopMatchScoutActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings_activity_settings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/pref_general.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_superuser.xml" />
@@ -4595,9 +4580,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/SuperuserActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/RecycleRush/RecycleRush.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/backend/DataStorage.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/backend/Constants.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/MasterFRCScouterApplication.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/backend/Constants.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/TeleopMatchScoutActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/AutonMatchScoutActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/MatchScoutSubmitActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/Stronghold/StrongholdDataCalculator.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/Stronghold/Stronghold.java" />
       </list>
     </option>
   </component>
@@ -4617,7 +4607,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="709" />
+    <option name="height" value="714" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -4658,38 +4648,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MasterFRCScouter" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
-      <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Production">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Tests">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -4791,77 +4749,37 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="masterfrcscouter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
+      <pane id="AndroidView">
+        <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="MasterFRCScouter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MasterFRCScouter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="masterfrcscouter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="activities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Production">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MasterFRCScouter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MasterFRCScouter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+          </PATH>
+        </subPane>
+        <subPane subId="Tests">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -4880,6 +4798,8 @@
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
     <property name="device.picker.selection" value="TA9750089N" />
     <property name="FullScreen" value="false" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -5196,11 +5116,17 @@
       <option name="project" value="LOCAL" />
       <updated>1451352078532</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Updates">
+      <created>1452109408469</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1452109408469</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="709" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="714" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -5219,7 +5145,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24071082" sideWeight="0.43844858" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3117932" sideWeight="0.43844858" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294621" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24961832" sideWeight="0.48722318" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875606" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -5236,7 +5162,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32823962" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32871974" sideWeight="0.4973262" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32603687" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32441473" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Mirror" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -5304,7 +5230,8 @@
     <MESSAGE value="Merry Christmas everyone!!&#10;&#10;Major Refactoring, cleanup, new backend features, and bug fixing!" />
     <MESSAGE value="More cleanup" />
     <MESSAGE value="Add a way to optionally send a match over text." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a way to optionally send a match over text." />
+    <MESSAGE value="Updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -5314,6 +5241,28 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_auton_match_scout.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_auton_match_scout.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/InfoActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.123861566">
@@ -5379,13 +5328,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/TeleopMatchScoutActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.59880954">
-          <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -5457,13 +5399,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/ExportDataActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7592955">
-          <caret line="85" column="125" selection-start-line="85" selection-start-column="125" selection-end-line="85" selection-end-column="125" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/RecycleRush/RRStack.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8761062">
@@ -5478,27 +5413,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/MatchScoutSubmitActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63893807">
-          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/RecycleRush/RecycleRushDataCalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18761063">
-          <caret line="93" column="22" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/RecycleRush/RecycleRush.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.9504423">
-          <caret line="300" column="53" selection-start-line="300" selection-start-column="53" selection-end-line="300" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2300123">
@@ -5510,7 +5424,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.5840708">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5526,7 +5439,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.063717">
           <caret line="109" column="20" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5534,15 +5446,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.11504425">
           <caret line="88" column="16" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71681416">
-          <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5550,7 +5453,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5558,7 +5460,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18584071">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5566,7 +5467,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39823008">
           <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5574,23 +5474,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4920354">
           <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/Match.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.053097345">
-          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/MatchDataCalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31858408">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5598,7 +5481,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5606,7 +5488,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28318584">
           <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5614,15 +5495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36460176">
-          <caret line="26" column="51" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5630,24 +5502,120 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42477876">
           <caret line="21" column="116" selection-start-line="21" selection-start-column="116" selection-end-line="21" selection-end-column="116" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/MasterFRCScouterApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49557522">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.57894737">
+          <caret line="40" column="71" selection-start-line="40" selection-start-column="71" selection-end-line="40" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/ExportDataActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.6315789">
+          <caret line="85" column="125" selection-start-line="85" selection-start-column="125" selection-end-line="85" selection-end-column="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7105263">
+          <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/TeleopMatchScoutActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4473684">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/AutonMatchScoutActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4778761">
-          <caret line="95" column="23" selection-start-line="95" selection-start-column="23" selection-end-line="95" selection-end-column="23" />
+        <state vertical-scroll-proportion="1.8421053">
+          <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/view/activities/MatchScoutSubmitActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21052632">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_auton_match_scout.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/Stronghold/StrongholdDataCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23684211">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/RecycleRush/RecycleRushDataCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.4473684">
+          <caret line="93" column="22" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/Match.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/RecycleRush/RecycleRush.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55263156">
+          <caret line="121" column="5" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/Stronghold/Stronghold.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5263158">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#467#468#0" expanded="true" />
+            <element signature="e#492#493#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/hammerhead226/masterfrcscouter/model/MatchDataCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31578946">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.1052632">
+          <caret line="80" column="41" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
           <folding />
         </state>
       </provider>
