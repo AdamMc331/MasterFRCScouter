@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -36,7 +35,6 @@ public class AutonMatchScoutActivity extends AppCompatActivity implements Adapte
     /*Type*/ Match match;
 
     @Bind(R.id.autonItems) ListView autonListView;
-    @Bind(R.id.numAutoFouls) EditText autoFouls;
     @Bind(R.id.goToTeleop) Button goToTeleop;
     @Bind(R.id.autonSelectionTV) TextView autonSelectionTV;
 
@@ -109,7 +107,5 @@ public class AutonMatchScoutActivity extends AppCompatActivity implements Adapte
         autonSelectionTV.setText(origText + "\n" + autonSelection);
     }
 
-    private void setBlank() {
-        autoFouls.setText("0");
-    }
+    private void setBlank() {  }
 }

@@ -7,9 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.Switch;
 
 import com.adithyasairam.android.android_commons.Intents;
 import com.adithyasairam.utils.annotations.Changeable;
@@ -18,7 +15,6 @@ import org.hammerhead226.masterfrcscouter.android.R;
 import org.hammerhead226.masterfrcscouter.backend.Constants;
 import org.hammerhead226.masterfrcscouter.model.Match;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
 
 ;
@@ -27,31 +23,6 @@ import butterknife.ButterKnife;
         when = Changeable.When.YEARLY, priority = Changeable.Priority.HIGH)
 public class TeleopMatchScoutActivity extends AppCompatActivity implements View.OnClickListener {
     /*Type*/ Match match;
-    @Bind(R.id.submitStack)
-    Button stackSubmit;
-    @Bind(R.id.stackHeightET)
-    EditText stackHeight;
-    @Bind(R.id.canOnTopWithLitterCB)
-    CheckBox canOnTopWithLitter;
-    @Bind(R.id.canOnTopCB)
-    CheckBox canOnTop;
-    @Bind(R.id.totesFromHumanFeeder)
-    CheckBox totesFromHF;
-    @Bind(R.id.totesFromLandfill)
-    CheckBox totesFromLF;
-    @Bind(R.id.canCappedSwitch)
-    Switch didCapCans;
-    @Bind(R.id.numCansCappedET)
-    EditText numCansCapped;
-    @Bind(R.id.coopSetSwitch)
-    Switch coopSet;
-    @Bind(R.id.coopStackSwitch)
-    Switch coopStack;
-    @Bind(R.id.knockedStackSwitch)
-    Switch knockedOverStacks;
-    @Bind(R.id.numTeleFoulsET)
-    EditText numTeleFouls;
-    @Bind(R.id.nextBttn)
     Button nextButton;
 
     @Override
@@ -64,7 +35,6 @@ public class TeleopMatchScoutActivity extends AppCompatActivity implements View.
         }
         setContentView(R.layout.activity_teleop_match_scout);
         ButterKnife.bind(this);
-        stackSubmit.setOnClickListener(this);
         nextButton.setOnClickListener(this);
     }
 
