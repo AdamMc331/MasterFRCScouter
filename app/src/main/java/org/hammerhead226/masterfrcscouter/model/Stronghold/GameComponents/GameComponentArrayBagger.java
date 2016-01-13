@@ -31,3 +31,23 @@ public class GameComponentArrayBagger implements ParcelBagger<GameComponent[]> {
         return gameComponents;
     }
 }
+
+// Adam suggestion: Why do you write class? Just write values and read them back using the class's constructor:
+@Override public void write(GameComponent[] value, Parcel out, int flags) {
+    for (GameComponent gameComponent : value) {
+        out.writeString(gameComponent.getGameMode());
+        out.writeInt(gameComponent.getScore());
+    }
+}
+
+@Override public GameComponent[] read(Parcel in) {
+    GameComponent[] gameComponents = new GameComponent[in.dataSize() / 2];
+    
+    for(int i = 0; i < gameComponents.length; i++) {
+        String gameMode = in.readString();
+        int score = in.readInt();
+        gameComponents[i] = new GameComponent(gameMode, score);
+    }
+    
+    return gameComponents;
+}
