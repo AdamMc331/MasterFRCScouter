@@ -61,8 +61,7 @@ public class ExportDataActivity extends AppCompatActivity {
             if (email == null || email.equals("null")) {
                 Toast.makeText(this, "Null Email Recipient. Please Configure it in settings.", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, SettingsActivity.class));
-            }
-            else {
+            } else {
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
                 intent.setData(Uri.parse("mailto:")); // only email apps should handle this
                 intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email}); // recipients

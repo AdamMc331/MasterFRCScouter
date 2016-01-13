@@ -6,9 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
+import android.widget.Toast;
 
+import org.hammerhead226.masterfrcscouter.android.P;
 import org.hammerhead226.masterfrcscouter.android.R;
-import org.hammerhead226.masterfrcscouter.backend.Constants;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -24,7 +25,11 @@ public class PitScoutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pit_scout);
         ButterKnife.bind(this);
-        myWebView.loadUrl(Constants.GoogleFormsURL);
+        String url = P.pitScoutURL.get();
+        if (url == null || url.equals("null")) {
+            Toast.makeText(this, "Null Pit Scout URL. Please Configure it in settings.", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, SettingsActivity.class));
+        } else { myWebView.loadUrl(url); }
     }
 
     @Override

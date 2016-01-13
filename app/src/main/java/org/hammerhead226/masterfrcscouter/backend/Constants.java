@@ -19,7 +19,6 @@ public final class Constants {
     public static final String MATCH_KEY = "org.hammerhead226.masterfrcscouter.android.MATCH"; //Key for Intent Data transfer
     public static final String MATCH_HEADER = "Match-HEAD"; //Header used for sending Matches
     public static final String MATCH_FOOTER = "Match-FOOT"; //Footer used for sending Matches
-    public static String GoogleFormsURL = "http://www.google.com"; //Google Forms URL for Pit scouting [Placeholder]
 
     public static File getAppDir() {
         RealStoragePathLibrary storagePathLibrary = new RealStoragePathLibrary(MasterFRCScouterApplication.getStaticApplicationContext());

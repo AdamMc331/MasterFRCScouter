@@ -1,8 +1,5 @@
 package org.hammerhead226.masterfrcscouter.model.RecycleRush;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import com.adithyasairam.utils.annotations.Exclude;
 
 import org.hammerhead226.masterfrcscouter.model.Match;
@@ -97,30 +94,6 @@ public class RecycleRush extends Match {
         comments = data[27];
     }
 
-    protected RecycleRush(Parcel in) {
-        super(in);
-        autonMode = in.readString();
-        numberOfAcquiredBinsInAuton = in.readInt();
-        numberOfAutonFoulPoints = in.readInt();
-        numAutonCansAttemptedToBurgle = in.readInt();
-        numAutonCansBurgled = in.readInt();
-        canBurglingSpeed = in.readDouble();
-        wasACOOPSetScoredInTeleop = readValue(in.readInt());
-        wasACOOPStackScoredInTeleop = readValue(in.readInt());
-        areStacksDown = readValue(in.readInt());
-        robotDidCap= readValue(in.readInt());
-        numberOfCaps = in.readInt();
-        numberOfStacksScoredInTeleop = in.readInt();
-        toteSource = in.readString();
-        stacks = in.readArrayList(null);
-        numberOfTeleopFoulPoints = in.readInt();
-        thisRobotsAproxAutonScore = in.readInt();
-        thisRobotsAproxTeleopScore = in.readInt();
-        thisRobotsAproxCOOPScore = in.readInt();
-        thisRobotsAproxTotalScore = in.readInt();
-        totalAllianceScore = in.readInt();
-    }
-
     @Override
     public MatchDataCalculator<?> initMatchDataCalculator() {
         return new RecycleRushDataCalculator((RecycleRush)getMatch());
@@ -198,30 +171,6 @@ public class RecycleRush extends Match {
         //Other
         comments = "";
         robotWasPoorlyDriven = false;
-    }
-
-    @Override
-    public void abstractWriteToParcel(Parcel out, int flags) {
-        out.writeString(autonMode);
-        out.writeInt(numberOfAcquiredBinsInAuton);
-        out.writeInt(numberOfAutonFoulPoints);
-        out.writeInt(numAutonCansAttemptedToBurgle);
-        out.writeInt(numAutonCansBurgled);
-        out.writeDouble(canBurglingSpeed);
-        out.writeInt(writeVal(wasACOOPSetScoredInTeleop));
-        out.writeInt(writeVal(wasACOOPStackScoredInTeleop));
-        out.writeInt(writeVal(areStacksDown));
-        out.writeInt(writeVal(robotDidCap));
-        out.writeInt(numberOfCaps);
-        out.writeInt(numberOfStacksScoredInTeleop);
-        out.writeString(toteSource);
-        out.writeList(stacks);
-        out.writeInt(numberOfTeleopFoulPoints);
-        out.writeInt(thisRobotsAproxAutonScore);
-        out.writeInt(thisRobotsAproxTeleopScore);
-        out.writeInt(thisRobotsAproxCOOPScore);
-        out.writeInt(thisRobotsAproxTotalScore);
-        out.writeInt(totalAllianceScore);
     }
 
     @Override
@@ -312,26 +261,5 @@ public class RecycleRush extends Match {
     public void putExtras(String notes, boolean badDriving) {
         comments = notes;
         robotWasPoorlyDriven = badDriving;
-    }
-
-    public static final Parcelable.Creator<RecycleRush> CREATOR
-            = new Parcelable.Creator<RecycleRush>() {
-        public RecycleRush createFromParcel(Parcel in) {
-            return new RecycleRush(in);
-        }
-
-        public RecycleRush[] newArray(int size) {
-            return new RecycleRush[size];
-        }
-    };
-
-    private boolean readValue(int val) {
-        if (val == 1) { return true; }
-        return false;
-    }
-
-    private int writeVal(boolean val) {
-        if (val) { return 1; }
-        return 0;
     }
 }

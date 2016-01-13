@@ -1,8 +1,5 @@
 package org.hammerhead226.masterfrcscouter.model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import org.hammerhead226.masterfrcscouter.backend.Constants;
 import org.hammerhead226.masterfrcscouter.backend.Scouter;
 
@@ -12,7 +9,7 @@ import java.util.UUID;
 /**
  * Created by Adi on 10/19/2015.
  */
-public abstract class Match implements Serializable, Parcelable {
+public abstract class Match implements Serializable {
     private static final long serialVersionUID = 201510192315L; /* Date Stamp: 2015-10-19 - 23:15 */
     private Match instance;
     private MatchDataCalculator<?> matchDataCalculator;
@@ -37,13 +34,6 @@ public abstract class Match implements Serializable, Parcelable {
         randomID = data[3];
         scoutingPosition = data[4];
         scouterName = data[5];
-    }
-    protected Match(Parcel in) {
-        instance = (Match)in.readSerializable();
-        matchDataCalculator = (MatchDataCalculator<?>)in.readSerializable();
-        matchNumber = in.readInt();
-        teamNumber = in.readInt();
-        randomID = in.readString();
     }
 
     public Match getMatch() { return instance; }
@@ -71,14 +61,4 @@ public abstract class Match implements Serializable, Parcelable {
     public abstract void init();
     public abstract void fieldReset();
     protected abstract String abstractCompressToString();
-    protected abstract void abstractWriteToParcel(Parcel out, int flags);
-    @Override public void writeToParcel(Parcel out, int flags) {
-        out.writeSerializable(instance);
-        out.writeSerializable(matchDataCalculator);
-        out.writeInt(matchNumber);
-        out.writeInt(teamNumber);
-        out.writeString(randomID);
-        abstractWriteToParcel(out, flags);
-    }
-    @Override public int describeContents() { return 0; }
 }

@@ -6,10 +6,12 @@ buildscript {
     dependencies {
         classpath 'io.fabric.tools:gradle:latest.release'
         classpath 'com.jakewharton:butterknife:latest.release'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:latest.release'
     }
 }
 apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
+apply plugin: 'com.neenbedankt.android-apt'
 
 repositories {
     maven { url 'https://maven.fabric.io/public' }
@@ -88,6 +90,8 @@ dependencies {
     compile 'com.bugsnag:bugsnag-android:latest.release'
     compile 'io.smooch:core:latest.release'
     compile 'io.smooch:ui:latest.release'
+    compile 'com.hannesdorfmann.parcelableplease:annotation:latest.release'
+    apt 'com.hannesdorfmann.parcelableplease:processor:latest.release'
     compile 'me.everything:providers-android:latest.release'
     debugCompile 'com.squareup.leakcanary:leakcanary-android:latest.release'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:latest.release'
